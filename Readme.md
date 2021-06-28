@@ -11,40 +11,40 @@
 
 ## Wallpapers:
 
-<img style="height: 150px; width: 150px" src="wallpapers/akari.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/astronaut.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/couple1.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/couple2.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/cyberpunk_car.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/cyberpunk_dragon.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/cyberpunk_hand.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/dark.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/dark_woods.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/doge.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/drawn_wood.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/gundam.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/halfwood.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/hill.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/manjaro_nord.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/modern.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/moon.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/ninja.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/paint_mix.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/pastel.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/plane.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/rocket_nord.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/sakura.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/sierra.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/skull.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/smoll_wave.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/snowhill.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/stardestroyer.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/street.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/tracks.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/trainstation.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/vim_nord.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/wall_plant.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/waves.png"/>
-<img style="height: 150px; width: 150px" src="wallpapers/win11.jpeg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/woods.jpg"/>
-<img style="height: 150px; width: 150px" src="wallpapers/woods_road.jpg"/>
+<img height="150" width="300" src="wallpapers/akari.png"/>
+<img height="150" width="300" src="wallpapers/astronaut.png"/>
+<img height="150" width="300" src="wallpapers/couple1.jpg"/>
+<img height="150" width="300" src="wallpapers/couple2.jpg"/>
+<img height="150" width="300" src="wallpapers/cyberpunk_car.jpg"/>
+<img height="150" width="300" src="wallpapers/cyberpunk_dragon.jpg"/>
+<img height="150" width="300" src="wallpapers/cyberpunk_hand.jpg"/>
+<img height="150" width="300" src="wallpapers/dark.jpg"/>
+<img height="150" width="300" src="wallpapers/dark_woods.png"/>
+<img height="150" width="300" src="wallpapers/doge.png"/>
+<img height="150" width="300" src="wallpapers/drawn_wood.png"/>
+<img height="150" width="300" src="wallpapers/gundam.png"/>
+<img height="150" width="300" src="wallpapers/halfwood.png"/>
+<img height="150" width="300" src="wallpapers/hill.jpg"/>
+<img height="150" width="300" src="wallpapers/manjaro_nord.png"/>
+<img height="150" width="300" src="wallpapers/modern.png"/>
+<img height="150" width="300" src="wallpapers/moon.png"/>
+<img height="150" width="300" src="wallpapers/ninja.png"/>
+<img height="150" width="300" src="wallpapers/paint_mix.jpg"/>
+<img height="150" width="300" src="wallpapers/pastel.jpg"/>
+<img height="150" width="300" src="wallpapers/plane.png"/>
+<img height="150" width="300" src="wallpapers/rocket_nord.png"/>
+<img height="150" width="300" src="wallpapers/sakura.jpg"/>
+<img height="150" width="300" src="wallpapers/sierra.jpg"/>
+<img height="150" width="300" src="wallpapers/skull.png"/>
+<img height="150" width="300" src="wallpapers/smoll_wave.png"/>
+<img height="150" width="300" src="wallpapers/snowhill.jpg"/>
+<img height="150" width="300" src="wallpapers/stardestroyer.png"/>
+<img height="150" width="300" src="wallpapers/street.jpg"/>
+<img height="150" width="300" src="wallpapers/tracks.png"/>
+<img height="150" width="300" src="wallpapers/trainstation.jpg"/>
+<img height="150" width="300" src="wallpapers/vim_nord.png"/>
+<img height="150" width="300" src="wallpapers/wall_plant.jpg"/>
+<img height="150" width="300" src="wallpapers/waves.png"/>
+<img height="150" width="300" src="wallpapers/win11.jpeg"/>
+<img height="150" width="300" src="wallpapers/woods.jpg"/>
+<img height="150" width="300" src="wallpapers/woods_road.jpg"/>

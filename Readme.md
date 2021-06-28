@@ -11,12 +11,12 @@
 
 ## Includes:
 
--   nvim
--   i3
--   i3status
--   fish
--   alacritty
--   dunst
+-   [nvim](/nvim)
+-   [i3](/i3)
+-   [i3status](/i3status)
+-   [fish](/fish)
+-   [alacritty](/alacritty)
+-   [dunst](/dunst)
 
 ## Wallpapers:
 

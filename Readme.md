@@ -4,20 +4,23 @@
 
 ## Screenshots:
 
-|                                                                                                                                             |                                                                                                                                             |     |
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-: |
-| <img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626652-5bbba580-d811-11eb-85ab-df1df88a8138.png"/> | <img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626706-6c6c1b80-d811-11eb-8d63-ebd2a7528bce.png"/> |
-| <img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png"/> |
-|                                                                                                                                             |
+|     |     |     |     |
+| :-: | :-: | :-: | :-: |
+
+|<img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626652-5bbba580-d811-11eb-85ab-df1df88a8138.png"/>
+|<img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626706-6c6c1b80-d811-11eb-8d63-ebd2a7528bce.png"/>
+|<img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png"/>
+|<img height="300" width="600" src="https://user-images.githubusercontent.com/47723417/123627342-2cf1ff00-d812-11eb-8f54-b622f362f0d6.png"/>
+|
 
 ## Includes:
 
--   nvim
--   i3
--   i3status
--   fish
--   alacritty
--   dunst
+-   [nvim](/nvim)
+-   [i3](/i3)
+-   [i3status](/i3status)
+-   [fish](/fish)
+-   [alacritty](/alacritty)
+-   [dunst](/dunst)
 
 ## Wallpapers:
 

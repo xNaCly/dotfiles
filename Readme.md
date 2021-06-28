@@ -1,6 +1,13 @@
 # Dotfiles
 > this includes configs and wallpapers
 
+## Screenshots:
+![image](https://user-images.githubusercontent.com/47723417/123626652-5bbba580-d811-11eb-85ab-df1df88a8138.png)
+![image](https://user-images.githubusercontent.com/47723417/123626706-6c6c1b80-d811-11eb-8d63-ebd2a7528bce.png)
+![image](https://user-images.githubusercontent.com/47723417/123626920-a6d5b880-d811-11eb-9af1-15ae1365c070.png)
+![image](https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png)
+
+
 ## Includes:
 - nvim
 - i3

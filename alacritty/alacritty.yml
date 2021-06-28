@@ -1,0 +1,10 @@
+background_opacity: 0.9
+window:
+  #decorations: none
+  padding:
+    x: 5
+    y: 5
+font:
+  normal:
+    family: JetBrains Mono
+  size: 14.0

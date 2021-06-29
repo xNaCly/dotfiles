@@ -1,5 +1,10 @@
 ### xnacly config ###
 # this config supports dynamic color setting based on the background for i3, i3status/bar, terminal (alacritty) and rofi
+
+# flags:
+set $wallpaper_path ~/.config/wallpapers2
+
+
 set_from_resource $background i3wm.color0
 set_from_resource $background2 i3wm.color0
 set_from_resource $accent1 i3wm.color2 
@@ -30,7 +35,7 @@ exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec_always --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec_always --no-startup-id "picom -f"
-exec_always --no-startup-id "wal -i ~/.config/wallpapers && cp -rv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors-rofi-dark.rasi && echo 'element-icon { size: 1.25em; }' >> ~/.config/rofi/colors-rofi-dark.rasi && python3 ~/.config/i3/scripts/colors.py"
+exec_always --no-startup-id "wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"

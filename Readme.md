@@ -1,6 +1,8 @@
 # Dotfiles
 
-> this includes configs and wallpapers
+These Dotfiles include dynamic wallpaper depended colorschemes for i3, i3bar, rofi and the terminal.
+
+Each i3 reload applies a different wallpaper + a colorscheme based on it using [pywal](https://github.com/dylanaraps/pywal) to create and set wallpapers.
 
 ## Screenshots:
 
@@ -19,9 +21,10 @@
 -   [dunst](/dunst)
 
 ## Wallpapers:
+ 
+> taken from `r/wallpapers`, `r/unixporn` and several google searches
 
 <img height="150" width="300" src="wallpapers/akari.png"/>
-<img height="150" width="300" src="wallpapers/astronaut.png"/>
 <img height="150" width="300" src="wallpapers/couple1.jpg"/>
 <img height="150" width="300" src="wallpapers/couple2.jpg"/>
 <img height="150" width="300" src="wallpapers/cyberpunk_car.jpg"/>

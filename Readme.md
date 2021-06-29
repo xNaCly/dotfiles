@@ -21,7 +21,6 @@
 ## Wallpapers:
 
 <img height="150" width="300" src="wallpapers/akari.png"/>
-<img height="150" width="300" src="wallpapers/astronaut.png"/>
 <img height="150" width="300" src="wallpapers/couple1.jpg"/>
 <img height="150" width="300" src="wallpapers/couple2.jpg"/>
 <img height="150" width="300" src="wallpapers/cyberpunk_car.jpg"/>

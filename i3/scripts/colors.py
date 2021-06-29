@@ -19,6 +19,6 @@ with open("/home/xnacly/.config/dunst/dunstrc", "w") as f:
     content = re.sub(r'background = ".+"',f'background = "{background}"', content)
     f.write(content)
 
-os.system("killall dunst; notify-send 'restarted dunst with applied color'")
 os.system("cp -rv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors-rofi-dark.rasi")
 os.system("echo 'element-icon { size: 1.25em; }' >> ~/.config/rofi/colors-rofi-dark.rasi")
+os.system("killall dunst; notify-send 'restarted dunst, rofi, alacritty and i3 with applied colorscheme")

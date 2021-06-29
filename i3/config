@@ -1,5 +1,11 @@
-### xnacly config ###
-# this config supports dynamic color setting based on the background for i3, i3status/bar, terminal (alacritty) and rofi
+#██╗  ██╗███╗   ██╗ █████╗  ██████╗██╗  ██╗   ██╗    ██╗██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+#╚██╗██╔╝████╗  ██║██╔══██╗██╔════╝██║  ╚██╗ ██╔╝    ██║╚════██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+# ╚███╔╝ ██╔██╗ ██║███████║██║     ██║   ╚████╔╝     ██║ █████╔╝    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██╔██╗ ██║╚██╗██║██╔══██║██║     ██║    ╚██╔╝      ██║ ╚═══██╗    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+#██╔╝ ██╗██║ ╚████║██║  ██║╚██████╗███████╗██║       ██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+# https://github.com/xnacly/dotfiles
+# this config supports dynamic color setting based on the background for i3, i3status/bar, terminal (alacritty), dunst and rofi
 
 # flags:
 set $wallpaper_path ~/.config/wallpapers

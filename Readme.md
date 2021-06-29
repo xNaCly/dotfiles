@@ -1,17 +1,30 @@
 # Dotfiles
 
-These Dotfiles include dynamic wallpaper depended colorschemes for i3, i3bar, rofi and the terminal.
+These Dotfiles include dynamic wallpaper depended colorschemes for i3, i3bar, rofi, dunst and the terminal.
 
 Each i3 reload applies a different wallpaper + a colorscheme based on it using [pywal](https://github.com/dylanaraps/pywal) to create and set wallpapers.
+This script includes a wallpaper selector made with dmenu.
 
 ## Screenshots:
 
-|                                                                                                                                             |                                                                                                                                             |
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123795756-9f331400-d8e4-11eb-97b7-e30eb0840415.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123795869-c2f65a00-d8e4-11eb-9007-d180dd0c764d.png"/> |
-| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123795236-15834680-d8e4-11eb-8a13-ddc83e70e322.png"/> |
+### Rofi:
+![image](https://user-images.githubusercontent.com/47723417/123811797-dd83ff80-d8f3-11eb-97f4-2381e3551dd2.png)
 
 
+### Floating Terminal:
+<img src="https://user-images.githubusercontent.com/47723417/123795869-c2f65a00-d8e4-11eb-9007-d180dd0c764d.png"/>
+
+### Tiling:
+![image](https://user-images.githubusercontent.com/47723417/123811541-a01f7200-d8f3-11eb-80db-3fe4f3992376.png)
+
+### Notification
+![image](https://user-images.githubusercontent.com/47723417/123811209-546cc880-d8f3-11eb-8b1a-32ad915b499d.png)
+
+### Dmenu selection:
+<img src="https://user-images.githubusercontent.com/47723417/123810984-24252a00-d8f3-11eb-8d7d-f4ec47e428a8.png"/>
+
+### Nvim
+![image](https://user-images.githubusercontent.com/47723417/123812518-7155cb80-d8f4-11eb-894a-436f114dd4ab.png)
 
 
 ## Includes:
@@ -23,13 +36,15 @@ Each i3 reload applies a different wallpaper + a colorscheme based on it using [
 -   [alacritty](/alacritty)
 -   [dunst](/dunst)
 
+
 ## Deps:
 - i3-gaps
 - python
 - pywal
 - dunst
+- dmenu
 ```
-sudo pacman -S i3 python dunst alacritty ranger w3m; sudo python3 -m pip install pywal || sudo pip install pywal; 
+sudo pacman -S i3 python dunst alacritty ranger w3m dmenu; sudo python3 -m pip install pywal || sudo pip install pywal; 
 ```
 
 ## Wallpapers:

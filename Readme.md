@@ -8,8 +8,11 @@ Each i3 reload applies a different wallpaper + a colorscheme based on it using [
 
 |                                                                                                                                             |                                                                                                                                             |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626652-5bbba580-d811-11eb-85ab-df1df88a8138.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626706-6c6c1b80-d811-11eb-8d63-ebd2a7528bce.png"/> |
-| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123627342-2cf1ff00-d812-11eb-8f54-b622f362f0d6.png"/> |
+| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626652-5bbba580-d811-11eb-85ab-df1df88a8138.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123793421-f5528800-d8e1-11eb-8d5f-d2c948edda52.png"/> |
+| <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123626975-b81ec500-d811-11eb-942a-20bb2cf21700.png"/> | <img height="200" width="400" src="https://user-images.githubusercontent.com/47723417/123793514-12875680-d8e2-11eb-8615-7c90321d1d26.png"/> |
+
+
+
 
 ## Includes:
 

@@ -23,6 +23,15 @@ Each i3 reload applies a different wallpaper + a colorscheme based on it using [
 -   [alacritty](/alacritty)
 -   [dunst](/dunst)
 
+## Deps:
+- i3-gaps
+- python
+- pywal
+- dunst
+```
+sudo pacman -S i3 python dunst alacritty ranger w3m; sudo python3 -m pip install pywal || sudo pip install pywal; 
+```
+
 ## Wallpapers:
  
 > taken from `r/wallpapers`, `r/unixporn` and several google searches

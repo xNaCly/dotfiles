@@ -58,7 +58,7 @@ title_align center
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner 15
 font pango:JetBrains Mono 10
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec "sh ~/.config/i3/scripts/rofi.sh" 
 # --- default --- #
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet

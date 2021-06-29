@@ -46,6 +46,8 @@ export PF_INFO="ascii title os host kernel uptime pkgs memory"
 
 # config
 alias fishconf="nvim ~/.config/fish/conf.d/omf.fish"
+# change wallpaper
+alias wallpaper="sh ~/.config/i3/scripts/select.sh"
 
 ### exec on start ###
 

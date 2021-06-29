@@ -49,9 +49,10 @@ script includes a wallpaper selector made with dmenu.
 -   pywal
 -   dunst
 -   dmenu
+-   rofi
 
 ```
-sudo pacman -S i3 python dunst alacritty ranger w3m dmenu; sudo python3 -m pip install pywal || sudo pip install pywal;
+sudo pacman -S i3 python dunst alacritty ranger w3m dmenu rofi; sudo python3 -m pip install pywal || sudo pip install pywal;
 ```
 
 ## Wallpapers:

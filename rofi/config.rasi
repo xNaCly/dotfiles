@@ -11,13 +11,14 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "JetBrains Mono 13";
-/*	bw: 1;*/
+	font: "Fira Code 12";
+	bw: 3;
 /*	location: 0;*/
-	padding: 2;
+	opacity: 50;
+	padding: 10;
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
-/*	fixed-num-lines: true;*/
+	fixed-num-lines: true;
 	show-icons: true;
 	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
@@ -48,8 +49,8 @@ configuration {
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
-/*	line-margin: 2;*/
-/*	line-padding: 1;*/
+	line-margin: 10;
+	line-padding: 10;
 /*	filter: ;*/
 /*	separator-style: "dash";*/
 /*	hide-scrollbar: false;*/

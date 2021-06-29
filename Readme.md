@@ -5,7 +5,7 @@ rofi, dunst and the terminal.
 
 Each i3 reload applies a different wallpaper + a colorscheme based on it using
 [pywal](https://github.com/dylanaraps/pywal) to create and set wallpapers. This
-script includes a wallpaper selector made with rofi in dmenu mode.
+script includes a wallpaper selector made with dmenu.
 
 ## Screenshots:
 

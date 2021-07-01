@@ -12,5 +12,5 @@ window:
     y: 5
 font:
   normal:
-    family: Fira Code
-  size: 14.0
+    family: JetBrains Mono NerdFont
+  size: 10.0

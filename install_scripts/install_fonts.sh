@@ -1,1 +1,1 @@
-cp -rv ~/.config/install_scripts/fonts/* ~/.local/share/fonts/
+cp -rv ~/.config/fonts/* ~/.local/share/fonts/

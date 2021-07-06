@@ -29,11 +29,9 @@ with open("/home/xnacly/.config/i3status/i3status.conf", "w") as f:
     content = re.sub(r'color_good = ".+"',f'color_good = "{text_color1}"', content)
     content = re.sub(r'color_degraded = ".+"',f'color_degraded = "{warning}"', content)
     content = re.sub(r'color_bad = ".+"',f'color_bad = "{warning}"', content)
-    print(content)
     f.write(content)
 
 s(0.25)
 os.system("cp -rv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors-rofi-dark.rasi")
-os.system("echo 'element-icon { size: 1.25em; }' >> ~/.config/rofi/colors-rofi-dark.rasi")
 os.system("i3 reload && i3 restart")
 os.system("killall dunst; notify-send 'restarted dunst, rofi, alacritty and i3 with applied colorscheme'")

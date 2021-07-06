@@ -41,6 +41,7 @@ script includes a wallpaper selector made with dmenu.
 -   [fish](/fish)
 -   [alacritty](/alacritty)
 -   [dunst](/dunst)
+-   [rofi](/rofi)
 
 ## Deps:
 

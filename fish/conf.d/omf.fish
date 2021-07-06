@@ -63,3 +63,5 @@ end
 #cat ~/.cache/wal/sequences
 wal -q -n -R
 clear
+
+fish_vi_key_bindings

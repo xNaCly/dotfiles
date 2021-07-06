@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+:root {
+	--bg1: #2e3440;
+	--bg2: #3b4252;
+	--acc: #5e81ac;
+	--txt: #d8dee9;
+	--txt_hover: #d8dee990;
+	--bg1_hover: #2e344090;
+	--bg2_hover: #3b425290;
+	--acc_hover: #5e81ac90;
+}
+
+* {
+	font-family: "JetBrains Mono", monospace;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--bg1);
+	color: var(--txt);
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.second {
+	background-color: var(--bg2);
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.third {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.forth {
+	text-align: start;
+	width: 100%;
+}
+.forth > ul {
+	margin-left: 2rem;
+}
+
+.transparent {
+	background-color: transparent;
+}
+a {
+	color: var(--acc);
+}
+
+a:hover {
+	color: var(--acc_hover);
+}
+
+.image {
+	height: 200px;
+	width: 400px;
+	margin: 0.25rem;
+}
+
+.image_container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+}
+
+h3 {
+	margin-top: 0.125rem;
+	margin-bottom: 0.125rem;
+	margin-left: 1rem;
+}
+
+.small {
+	color: var(--txt_hover);
+	font-style: italic;
+}
+
+.sec_ul,
+.sub_li,
+.sec_lil {
+	margin-left: 1.5rem;
+}
+
+code {
+	padding: 0.2rem;
+	background-color: var(--bg2_hover);
+	color: var(--txt_hover);
+}

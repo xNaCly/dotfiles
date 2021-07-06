@@ -12,6 +12,7 @@ with open("/home/xnacly/.cache/wal/colors.json","r") as f:
     accent = f["colors"]["color2"]
     warning = f["colors"]["color9"]
     text_color1 = f["colors"]["color6"]
+    wallpaper = f["wallpaper"].split("/")[-1]
 
 with open("/home/xnacly/.config/dunst/dunstrc", "r") as f:
     content = f.read()
@@ -34,4 +35,4 @@ with open("/home/xnacly/.config/i3status/i3status.conf", "w") as f:
 s(0.25)
 os.system("cp -rv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors-rofi-dark.rasi")
 os.system("i3 reload && i3 restart")
-os.system("killall dunst; notify-send 'restarted dunst, rofi, alacritty and i3 with applied colorscheme'")
+os.system(f"killall dunst; notify-send 'restarted dunst, rofi, alacritty and i3 with applied colorscheme generated from: \n{wallpaper}'")

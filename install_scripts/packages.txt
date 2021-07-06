@@ -1,0 +1,8 @@
+i3
+python
+dunst
+alacritty
+ranger
+w3m
+rofi
+yay

@@ -8,9 +8,12 @@
 # this config supports dynamic color setting based on the background for i3, i3status/bar, terminal (alacritty), dunst and rofi
 
 # flags:
+set $browser "firefox"
 set $wallpaper_path ~/.config/wallpapers
 set $font JetBrains Mono 
 set $font_size 12
+set $gaps 15
+focus_follows_mouse no
 set_from_resource $background i3wm.color0
 set_from_resource $background2 i3wm.color0
 set_from_resource $accent1 i3wm.color2 
@@ -27,9 +30,10 @@ set $mod Mod4
 # binds mod+c to launch i3 config
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
 # binds mod+b to launch browser
-bindsym $mod+b exec "brave"
+bindsym $mod+b exec $browser 
 # binds mod+s to launch settings
 bindsym $mod+s exec "gnome-control-center"
+bindsym $mod+shift+s exec "flameshot gui"
 # binds mod+e to launch files
 bindsym $mod+e exec "thunar"
 # binds mod+w to switch wallpapers
@@ -48,7 +52,7 @@ exec_always --no-startup-id "wal -R"#"wal -i $wallpaper_path && python3 ~/.confi
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
-exec --no-startup-id i3-msg "exec discord"
+exec --no-startup-id i3-msg "exec discord-canary"
 exec --no-startup-id i3-msg "exec flameshot"
 for_window [class="Spotify"] move to workspace $ws4 # https://github.com/i3/i3/issues/2060
 for_window [class="Brave-browser"] move to workspace $ws1
@@ -58,7 +62,7 @@ for_window [class="Gnome-screenshot"] toggle floating
 for_window [class="Screenshot"] toggle floating
 title_align center
 bindsym $mod+n exec "nm-connection-editor"
-gaps inner 7
+gaps inner $gaps
 font pango:$font $font_size-2
 bindsym $mod+d exec "sh ~/.config/i3/scripts/rofi.sh" 
 # --- default --- #
@@ -118,10 +122,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -136,7 +140,7 @@ bar {
         status_command i3status -c ~/.config/i3status/i3status.conf
         i3bar_command i3bar --transparency
         position top
-        tray_output none
+        #tray_output none
         separator_symbol "/"
         # strip_workspace_numbers true
         font pango:$font $font_size 

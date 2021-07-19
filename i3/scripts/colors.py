@@ -35,4 +35,5 @@ with open("/home/xnacly/.config/i3status/i3status.conf", "w") as f:
 s(0.25)
 os.system("cp -rv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors-rofi-dark.rasi")
 os.system("i3 reload && i3 restart")
-os.system(f"killall dunst; notify-send 'restarted dunst, rofi, alacritty and i3 with applied colorscheme generated from: \n{wallpaper}'")
+os.system("pywalfox update")
+os.system(f"killall dunst; notify-send 'restarted dunst, rofi, alacritty, firefox and i3 with applied colorscheme generated from: \n{wallpaper}'")

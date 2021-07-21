@@ -15,7 +15,7 @@ script includes a wallpaper selector made with dmenu.
 
 ### Floating Terminal:
 
-<img src="https://user-images.githubusercontent.com/47723417/123795869-c2f65a00-d8e4-11eb-9007-d180dd0c764d.png"/>
+![image](https://user-images.githubusercontent.com/47723417/126534426-ae16f203-b274-4b10-85c4-0648c066604e.png)
 
 ### Tiling:
 

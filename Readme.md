@@ -1,7 +1,7 @@
 # Dotfiles
 
 These Dotfiles include dynamic wallpaper depended colorschemes for i3, i3bar,
-rofi, dunst and the terminal.
+rofi, dunst, firefox, vscode and the terminal.
 
 Each i3 reload applies a different wallpaper + a colorscheme based on it using
 [pywal](https://github.com/dylanaraps/pywal) to create and set wallpapers. This

@@ -10,9 +10,9 @@
 # flags:
 set $browser "firefox"
 set $wallpaper_path ~/.config/wallpapers
-set $font JetBrains Mono 
+set $font TerminessTTF NerdFont 
 set $font_size 12
-set $gaps 15
+set $gaps 10
 focus_follows_mouse no
 set_from_resource $background i3wm.color0
 set_from_resource $background2 i3wm.color0
@@ -137,7 +137,8 @@ client.unfocused        $text_color3    $text_color3    $text_color2    $accent3
 default_border pixel 1
 default_floating_border normal 1
 bar {
-        status_command i3status -c ~/.config/i3status/i3status.conf
+        #status_command i3status -c ~/.config/i3status/i3status.conf
+        status_command i3status -c ~/.config/i3status/i3status_without_icons.conf
         i3bar_command i3bar --transparency
         position top
         #tray_output none

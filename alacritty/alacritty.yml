@@ -12,19 +12,19 @@ window:
         y: 5
 font:
     normal:
-        family: JetBrains Mono
+        family: TerminessTTF NerdFont
         style: Regular
 
     bold:
-        family: JetBrains Mono
+        family: TerminessTTF NerdFont
         style: Bold
 
     italic:
-        family: JetBrains Mono
+        family: TerminessTTF NerdFont
         style: Italic
 
     bold_italic:
-        family: JetBrains Mono
+        family: TerminessTTF NerdFont
         style: Bold Italic
     size: 12.0
 

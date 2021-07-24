@@ -9,6 +9,9 @@ script includes a wallpaper selector made with dmenu.
 
 ## Screenshots:
 
+###  General:
+
+
 ### Rofi:
 
 ![image](https://user-images.githubusercontent.com/47723417/123811797-dd83ff80-d8f3-11eb-97f4-2381e3551dd2.png)
@@ -25,13 +28,10 @@ script includes a wallpaper selector made with dmenu.
 
 ![image](https://user-images.githubusercontent.com/47723417/123811209-546cc880-d8f3-11eb-8b1a-32ad915b499d.png)
 
-### Dmenu selection:
+### Dmenu wallpaper selection:
 
 <img src="https://user-images.githubusercontent.com/47723417/123810984-24252a00-d8f3-11eb-8d7d-f4ec47e428a8.png"/>
 
-### Nvim
-
-![image](https://user-images.githubusercontent.com/47723417/123812518-7155cb80-d8f4-11eb-894a-436f114dd4ab.png)
 
 ## Includes:
 

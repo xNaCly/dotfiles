@@ -15,7 +15,16 @@ export PATH="/home/$USER/bin:$PATH"
 
 ### aliases ###
 
-# kill alias
+# make double excl work
+function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
+    if test "$argv" = !!
+    eval command sudo $history[1]
+else
+    command sudo $argv
+    end
+end
+
+alias gotop="gotop -s"
 
 # rss feed reader
 alias nb="newsboat"

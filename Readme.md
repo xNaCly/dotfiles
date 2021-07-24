@@ -11,6 +11,7 @@ script includes a wallpaper selector made with dmenu.
 
 ###  General:
 
+![image](https://user-images.githubusercontent.com/47723417/126879346-88e7e98e-bd0e-4873-a1a8-25771ac5143f.png)
 
 ### Rofi:
 

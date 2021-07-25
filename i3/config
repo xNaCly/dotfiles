@@ -52,7 +52,7 @@ exec_always --no-startup-id "wal -R"#"wal -i $wallpaper_path && python3 ~/.confi
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
-exec --no-startup-id i3-msg "exec discord-canary"
+exec --no-startup-id i3-msg "exec discord"
 exec --no-startup-id i3-msg "exec flameshot"
 for_window [class="Spotify"] move to workspace $ws4 # https://github.com/i3/i3/issues/2060
 for_window [class="Brave-browser"] move to workspace $ws1

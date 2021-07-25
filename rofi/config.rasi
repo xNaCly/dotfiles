@@ -11,7 +11,7 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "JetBrains Mono 10";
+	font: "TerminessTTF NerdFont 12";
 	bw: 3;
 /*	location: 0;*/
 	opacity: 50;
@@ -19,7 +19,7 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 	fixed-num-lines: true;
-	show-icons: true;
+	/*show-icons: true;*/
 	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/

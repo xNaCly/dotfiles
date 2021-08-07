@@ -3,7 +3,7 @@ import os
 
 def format(n):
     n = n.split(" ")
-    return f".LP\n.B\n{n[0].replace('$mod', '$MOD').replace('$browser', '$BROWSER')}:\n.LP\n{' '.join(n[1:])}"
+    return f".LP\n.B\n{n[0]}:\n.LP\n{' '.join(n[1:])}"
 
 with open("/home/xnacly/.config/i3/config","r") as file:
     contents = file.read()

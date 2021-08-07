@@ -1,20 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-	--bg1: #2e3440;
-	--bg2: #3b4252;
-	--acc: #5e81ac;
-	--txt: #d8dee9;
-	--txt_hover: #d8dee990;
-	--bg1_hover: #2e344090;
-	--bg2_hover: #3b425290;
-	--acc_hover: #5e81ac90;
+	--bg1: white;
+	--bg2: white;
+	--acc: #5691a8;
+	--txt: black;
+	--txt_hover: #5f626890;
+	--bg1_hover: #979eac90;
+	--bg2_hover: #929aad90;
+	--acc_hover: #5691a890;
 }
 
 * {
-	font-family: "JetBrains Mono", monospace;
+	font-family: "Roboto", sans-serif;
 	margin: 0;
 	padding: 0;
+	width: 100%;
 }
 
 body {
@@ -46,7 +47,6 @@ body {
 }
 
 .forth {
-	text-align: start;
 	width: 100%;
 }
 .forth > ul {
@@ -106,6 +106,7 @@ h3 {
 
 code {
 	padding: 0.2rem;
-	background-color: var(--bg2_hover);
+	font-family: monospace;
+	/*background-color: var(--bg2_hover);*/
 	color: var(--txt_hover);
 }

@@ -1,4 +1,4 @@
-#██╗  ██╗███╗   ██╗ █████╗  ██████╗██╗  ██╗   ██╗    ██╗██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+#█╗   ██╗███╗   ██╗ █████╗  ██████╗██╗  ██╗   ██╗    ██╗██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗  
 #╚██╗██╔╝████╗  ██║██╔══██╗██╔════╝██║  ╚██╗ ██╔╝    ██║╚════██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
 # ╚███╔╝ ██╔██╗ ██║███████║██║     ██║   ╚████╔╝     ██║ █████╔╝    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
 # ██╔██╗ ██║╚██╗██║██╔══██║██║     ██║    ╚██╔╝      ██║ ╚═══██╗    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
@@ -27,8 +27,10 @@ set_from_resource $color_warning i3wm.color10
 set_from_resource $color_success i3wm.color11
 
 set $mod Mod4
-# binds mod+c to launch i3 config
+# binds mod+c to launch alacritty in i3 config dir
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
+# binds mod+g to launch keybind documentation
+bindsym $mod+g exec "python3 ~/.config/i3/scripts/keybinds.py && zathura ~/.config/i3/scripts/keybinds_temp.pdf"
 # binds mod+b to launch browser
 bindsym $mod+b exec $browser 
 # binds mod+s to launch settings
@@ -58,8 +60,16 @@ for_window [class="Spotify"] move to workspace $ws4 # https://github.com/i3/i3/i
 for_window [class="Brave-browser"] move to workspace $ws1
 assign [class="discord"] → $ws3
 assign [class="Alacritty"] → $ws2
-for_window [class="Gnome-screenshot"] toggle floating
-for_window [class="Screenshot"] toggle floating
+for_window [class="Places"]                             floating enable
+for_window [class="Tor Browser"]                        floating enable
+for_window [class="Gnome-screenshot"]                   floating enable
+for_window [class="Screenshot"]                         floating enable
+for_window [window_role="pop-up"]                       floating enable
+for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
 title_align center
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps

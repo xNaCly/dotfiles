@@ -46,6 +46,7 @@ alias vim="nvim"
 # ls
 alias l="ls -la"
 alias la="ls -la"
+alias tree="exa --tree --level=4 --icons --git"
 
 # github
 alias gs="git status"
@@ -53,6 +54,9 @@ alias ga="git add -A"
 alias gc="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
+
+# node
+alias ns="npm start"
 
 # pfetch
 export PF_INFO="ascii title os host kernel uptime pkgs memory"

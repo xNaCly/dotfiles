@@ -1,7 +1,7 @@
 background=`xrdb -query | grep "background" | awk '{print $2}' | tail -n -1`
 foreground=`xrdb -query | grep "foreground" | awk '{print $2}' | tail -n -1`
 accent=`xrdb -query | grep "color2" | awk '{print $2}' | tail -n -1`
-img=`ls -l ~/.config/wallpapers | awk '{ print $9 }' | dmenu -i -l 30 -nb $background -nf $foreground -sb $accent -fn "JetBrains Mono"`
+img=`ls -l ~/.config/wallpapers | awk '{ print $9 }' | dmenu -i -l 30 -nb $background -nf $foreground -sb $accent -fn "IBM Plex Mono"`
 
 rtrn=$?
 if test "$rtrn" = "0"; then

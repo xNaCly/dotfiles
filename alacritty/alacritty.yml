@@ -12,20 +12,20 @@ window:
         y: 5
 font:
     normal:
-        family: TerminessTTF NerdFont
+        family: IBM Plex Mono
         style: Regular
 
     bold:
-        family: TerminessTTF NerdFont
+        family: IBM Plex Mono
         style: Bold
 
     italic:
-        family: TerminessTTF NerdFont
+        family: IBM Plex Mono
         style: Italic
 
     bold_italic:
-        family: TerminessTTF NerdFont
+        family: IBM Plex Mono
         style: Bold Italic
-    size: 12.0
+    size: 11.0
 
 draw_bold_text_with_bright_colors: true

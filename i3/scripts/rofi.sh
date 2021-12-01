@@ -1,1 +1,1 @@
-rofi -modi "window,drun" -show window -config "~/.config/rofi/config.rasi"
+rofi -modi "window,drun" -show window -config "~/.config/rofi/config.rasi" 

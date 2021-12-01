@@ -10,9 +10,11 @@
 # flags:
 set $browser "firefox"
 set $wallpaper_path ~/.config/wallpapers
-set $font TerminessTTF NerdFont 
-set $font_size 12
-set $gaps 10
+set $font IBM Plex Mono 
+set $font_size 10
+set $gaps 5
+set $Locker i3lock --color=000000 && sleep 1
+hide_edge_borders smart
 focus_follows_mouse no
 set_from_resource $background i3wm.color0
 set_from_resource $background2 i3wm.color0
@@ -26,6 +28,7 @@ set_from_resource $color_danger i3wm.color9
 set_from_resource $color_warning i3wm.color10 
 set_from_resource $color_success i3wm.color11
 
+bindsym $mod+shift+p exec --no-startup-id $Locker, mode "default"
 set $mod Mod4
 # binds mod+c to launch alacritty in i3 config dir
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
@@ -76,6 +79,7 @@ bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
 font pango:$font $font_size-2
 bindsym $mod+d exec "sh ~/.config/i3/scripts/rofi.sh" 
+#bindsym $mod+d exec "dmenu_run -i -p 'App:'" 
 # --- default --- #
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -99,11 +103,11 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+u layout toggle split
 bindsym $mod+Shift+space floating toggle
-set $ws1 "1:WWW"
-set $ws2 "2:CODE"
-set $ws3 "3:DISCORD"
-set $ws4 "4:SPOTIFY"
-set $ws5 "5:UTIL"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -133,10 +137,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 20 px or 20 ppt
+        bindsym j resize grow height 20 px or 20 ppt
+        bindsym k resize shrink height 20 px or 20 ppt
+        bindsym l resize grow width 20 px or 20 ppt
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -149,10 +153,11 @@ default_border pixel 1
 default_floating_border normal 1
 bar {
         #status_command i3status -c ~/.config/i3status/i3status.conf
-        status_command i3status -c ~/.config/i3status/i3status_without_icons.conf
+        #status_command i3status -c ~/.config/i3status/i3status_without_icons.conf
+        status_command i3status -c ~/.config/i3status/i3status_clean.conf
         i3bar_command i3bar --transparency
         position top
-        #tray_output none
+        tray_output none
         separator_symbol "/"
         # strip_workspace_numbers true
         font pango:$font $font_size 
@@ -170,3 +175,4 @@ bar {
 
         }
 }
+exec --no-startup-id xautolock -time 5 -locker 'i3lock --color=000000' -corners +00-

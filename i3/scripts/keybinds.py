@@ -24,4 +24,4 @@ template = template.replace("__FLAGS__", flags.replace("\"","")).replace("__KEYB
 with open("/home/xnacly/.config/i3/scripts/keybinds_temp.ms", "w") as file:
     file.write(template)
 
-os.system("groff -ms ~/.config/i3/scripts/keybinds_temp.ms -k -T pdf > keybinds_temp.pdf")
+os.system("groff -ms ~/.config/i3/scripts/keybinds_temp.ms -k -T pdf > ~/.config/i3/scripts/keybinds_temp.pdf")

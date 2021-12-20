@@ -10,9 +10,9 @@
 # flags:
 set $browser "brave"
 set $wallpaper_path ~/.config/wallpapers
-set $font IBM Plex Mono 
+set $font Hack Nerd Font
 set $font_size 10
-set $gaps 5
+set $gaps 10
 set $Locker i3lock --color=000000 && sleep 1
 hide_edge_borders smart
 focus_follows_mouse no
@@ -28,8 +28,11 @@ set_from_resource $color_danger i3wm.color9
 set_from_resource $color_warning i3wm.color10 
 set_from_resource $color_success i3wm.color11
 
-bindsym $mod+shift+p exec --no-startup-id $Locker, mode "default"
+
+
 set $mod Mod4
+# binds ctrl+space to close the topmost notification
+bindsym ctrl+space exec "dunstctl close"
 # binds mod+c to launch alacritty in i3 config dir
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
 # binds mod+g to launch keybind documentation
@@ -53,7 +56,7 @@ exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec_always --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec_always --no-startup-id "picom -f"
-exec_always --no-startup-id "wal -R"#"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
+# exec_always --no-startup-id "wal -R"#"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
@@ -99,7 +102,8 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+v split v
+bindsym $mod+comma split v
+bindsym $mod+period split h
 bindsym $mod+f fullscreen toggle
 bindsym $mod+u layout toggle split
 bindsym $mod+Shift+space floating toggle
@@ -147,18 +151,19 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # class                 border          bg              text            indicator
-client.focused          $accent1        $accent1        $text_color1    $accent1
-client.unfocused        $text_color3    $text_color3    $text_color2    $accent3
+client.focused          $text_color1        $accent1        $text_color1    $accent1
+client.unfocused        $text_color1    $text_color3    $text_color2    $accent3
 default_border pixel 1
-default_floating_border normal 1
+default_floating_border normal 2
 bar {
-        #status_command i3status -c ~/.config/i3status/i3status.conf
+        bindsym button1 nop
+        status_command i3status -c ~/.config/i3status/i3status.conf
         #status_command i3status -c ~/.config/i3status/i3status_without_icons.conf
-        status_command i3status -c ~/.config/i3status/i3status_clean.conf
+        #status_command i3status -c ~/.config/i3status/i3status_clean.conf
         i3bar_command i3bar --transparency
         position top
-        tray_output none
-        separator_symbol "/"
+        tray_output primary
+        separator_symbol " "
         # strip_workspace_numbers true
         font pango:$font $font_size 
         colors {
@@ -167,12 +172,12 @@ bar {
                 separator $accent1
                 
                 #class                  border          bg              text    
-                focused_workspace       $accent1        $accent1        $text_color1
-                active_workspace        $accent1        $accent1        $text_color1
-                inactive_workspace      $background50   $background50   $text_color1
+                focused_workspace       $text_color1        $background60        $text_color1
+                active_workspace        $text_color1        $background60       $text_color1
+                inactive_workspace      $background60   $background60  $text_color1
                 urgent_workspace        $color_danger   $color_danger   $text_color1
                 binding_mode            $color_danger   $color_danger   $text_color1
 
         }
 }
-exec --no-startup-id xautolock -time 5 -locker 'i3lock --color=000000' -corners +00-
+exec --no-startup-id xautolock -time 15 -locker 'i3lock --color=000000' -corners +00-

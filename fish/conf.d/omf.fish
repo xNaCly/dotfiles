@@ -11,7 +11,7 @@
 set EDITOR "nvim"
 
 ### Path extras ###
-export PATH="/home/$USER/bin:$PATH"
+export PATH="/home/$USER/Applications:$PATH"
 
 ### aliases ###
 
@@ -73,7 +73,7 @@ function fish_greeting
 	#pfetch
 end
 
-#cat ~/.cache/wal/sequences
+cat ~/.cache/wal/sequences
 wal -q -n -R
 clear
 

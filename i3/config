@@ -10,7 +10,7 @@
 # flags:
 set $browser "brave"
 set $wallpaper_path ~/.config/wallpapers
-set $font Hack Nerd Font
+set $font IBM Plex Mono  
 set $font_size 10
 set $gaps 10
 set $Locker i3lock --color=000000 && sleep 1
@@ -162,8 +162,7 @@ bar {
         #status_command i3status -c ~/.config/i3status/i3status_clean.conf
         i3bar_command i3bar --transparency
         position top
-        tray_output primary
-        separator_symbol " "
+        separator_symbol " " 
         # strip_workspace_numbers true
         font pango:$font $font_size 
         colors {

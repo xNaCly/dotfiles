@@ -4,8 +4,6 @@ dunst
 alacritty
 ranger
 w3m
-rofi
-yay
 dunst
 feh
 picom

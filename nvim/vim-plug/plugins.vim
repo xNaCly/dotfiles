@@ -8,26 +8,20 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    " File Explorer
+    Plug 'deoplete-plugins/deoplete-clang'
+    Plug 'dense-analysis/ale'
     Plug 'scrooloose/NERDTree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-    " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " startify
     Plug 'mhinz/vim-startify'
-    " prettier
-    " Plug 'sbdchd/neoformat'
-    " status line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
-    Plug 'arcticicestudio/nord-vim'
-    " Plug 'joshdick/onedark.vim'
-
-    " Plug 'sbdchd/neoformat' " doesnt seem to work :(
 call plug#end()
+
+let g:ale_linters = {
+  \ 'c': ['clang']
+  \}

@@ -1,4 +1,5 @@
-set number relativenumber
+set number
+set hidden
 filetype plugin on
 syntax enable                           " Enables syntax highlighing
 set nowrap                              " Display long lines as just one line
@@ -22,3 +23,5 @@ set noshowmode                          " We don't need to see things like -- IN
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
+noremap <silent> <space> :nohlsearch<CR> " clear search results
+nnoremap <C-e> :NERDTreeMirror<CR>:NERDTreeFocus<CR>

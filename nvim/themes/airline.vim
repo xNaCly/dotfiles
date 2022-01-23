@@ -4,6 +4,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#fnamemod = ":t"
 
 " enable powerline fonts
 let g:airline_powerline_fonts = 1
@@ -11,7 +12,7 @@ let g:airline_powerline_fonts = 1
 "let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'minimalist' "base16_nord; minimalist; murmur; deus
+let g:airline_theme = 'murmur' "base16_nord; minimalist; murmur; deus
 "Always show tabs
 set showtabline=2
 

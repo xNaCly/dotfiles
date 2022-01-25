@@ -12,7 +12,7 @@ let g:airline_powerline_fonts = 1
 "let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'murmur' "base16_nord; minimalist; murmur; deus
+let g:airline_theme = 'bubblegum'
 "Always show tabs
 set showtabline=2
 

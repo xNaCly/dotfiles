@@ -7,7 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
+    Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'sheerun/vim-polyglot'
     Plug 'deoplete-plugins/deoplete-clang'
     Plug 'dense-analysis/ale'

@@ -14,14 +14,14 @@ with open("/home/xnacly/.cache/wal/colors.json","r") as f:
     text_color1 = f["colors"]["color6"]
     wallpaper = f["wallpaper"].split("/")[-1]
 
-with open("/home/xnacly/.config/dunst/dunstrc", "r") as f:
-    content = f.read()
+# with open("/home/xnacly/.config/dunst/dunstrc", "r") as f:
+ #    content = f.read()
 
-with open("/home/xnacly/.config/dunst/dunstrc", "w") as f:
-    content = re.sub(r'frame_color = ".+"',f'frame_color = "{accent}"', content)
-    content = re.sub(r'foreground = ".+"',f'foreground = "{foreground}"', content)
-    content = re.sub(r'background = ".+"',f'background = "{background}"', content)
-    f.write(content)
+# with open("/home/xnacly/.config/dunst/dunstrc", "w") as f:
+ #    content = re.sub(r'frame_color = ".+"',f'frame_color = "{accent}"', content)
+  #   content = re.sub(r'foreground = ".+"',f'foreground = "{foreground}"', content)
+   #  content = re.sub(r'background = ".+"',f'background = "{background}"', content)
+   #  f.write(content)
 
 #with open("/home/xnacly/.config/i3status/i3status.conf", "r") as f:
     #content = f.read()

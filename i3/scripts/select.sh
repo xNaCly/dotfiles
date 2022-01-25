@@ -5,7 +5,7 @@ img=`ls -l ~/.config/wallpapers | awk '{ print $9 }' | dmenu -i -l 30 -nb $backg
 
 rtrn=$?
 if test "$rtrn" = "0"; then
-  wal -i ~/.config/wallpapers/$img && python3 ~/.config/i3/scripts/colors.py
+  wal -s -t -i ~/.config/wallpapers/$img && python3 ~/.config/i3/scripts/colors.py
 else
   exit
 fi

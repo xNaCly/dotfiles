@@ -6,7 +6,9 @@
     follow = mouse
 
     # Geometery reference --> [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "300x0-12+37"
+    geometry = "300x0"
+    origin = top-right
+    offset = 10x35
 
     # Radius of the four corners of the notification
     corner_radius = 0
@@ -118,21 +120,20 @@
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
-    background = "#0a0e10"
-    foreground = "#dcdfe2"
-    timeout = 1
+    background = "#1e1d2f"
+    foreground = "#d9e0ee"
+    frame_color = "#F5C2E7"
+    timeout = 3
     icon = /dev/null
 
 [urgency_normal]
-    background = "#0a0e10"
-    foreground = "#dcdfe2"
+    background = "#1e1d2f"
+    foreground = "#d9e0ee"
+    frame_color = "#F5C2E7"
     timeout = 10
     icon = /dev/null
 
 [urgency_critical]
-    background = "#0a0e10"
-    foreground = "#dcdfe2"
-    frame_color = "#788792"
     timeout = 0
     icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
 

@@ -1,27 +1,23 @@
-# Defined interactively
-function fish_prompt
-    if not set -q VIRTUAL_ENV_DISABLE_PROMPT
-        set -g VIRTUAL_ENV_DISABLE_PROMPT true
-    end
-    set_color yellow
-    printf '%s' $USER
-    set_color normal
-    printf ' at '
+function fish_prompt --description 'Write out the prompt'
+    set -l last_status $status
 
-    set_color magenta
-    echo -n (prompt_hostname)
-    set_color normal
-    printf ' in '
+    prompt_login
 
+    echo -n ':'
+
+    # PWD
     set_color $fish_color_cwd
-    printf '%s' (prompt_pwd)
+    echo -n (prompt_pwd)
     set_color normal
 
-    # Line 2
+    __terlar_git_prompt
+    fish_hg_prompt
     echo
-    if test -n "$VIRTUAL_ENV"
-        printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
+
+    if not test $last_status -eq 0
+        set_color $fish_color_error
     end
-    printf '↪ '
+
+    echo -n '➤ '
     set_color normal
 end

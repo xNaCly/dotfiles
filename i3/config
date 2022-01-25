@@ -9,6 +9,7 @@
 
 # flags:
 set $browser "brave"
+set $term "alacritty"
 set $wallpaper_path ~/.config/wallpapers
 set $font IBM Plex Mono  
 set $font_size 10
@@ -28,12 +29,10 @@ set_from_resource $color_danger i3wm.color9
 set_from_resource $color_warning i3wm.color10 
 set_from_resource $color_success i3wm.color11
 
-
-
 set $mod Mod4
 # binds ctrl+space to close the topmost notification
 bindsym ctrl+space exec "dunstctl close"
-# binds mod+c to launch alacritty in i3 config dir
+# binds mod+c to launch term in i3 config dir
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
 # binds mod+g to launch keybind documentation
 bindsym $mod+g exec "python3 ~/.config/i3/scripts/keybinds.py && zathura ~/.config/i3/scripts/keybinds_temp.pdf"
@@ -56,7 +55,7 @@ exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec_always --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec_always --no-startup-id "picom -f"
-# exec_always --no-startup-id "wal -R"#"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
+exec_always --no-startup-id "wal -s -t -R" #"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
@@ -82,7 +81,7 @@ bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
 font pango:$font $font_size-2
 #bindsym $mod+d exec "sh ~/.config/i3/scripts/rofi.sh" 
-bindsym $mod+d exec "dmenu_run -i -p 'App:'" 
+bindsym $mod+d exec "i3-dmenu-desktop --dmenu='dmenu -i -p 'App:'' " 
 # --- default --- #
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -92,7 +91,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 floating_modifier $mod
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -105,7 +104,6 @@ bindsym $mod+Shift+l move right
 bindsym $mod+comma split v
 bindsym $mod+period split h
 bindsym $mod+f fullscreen toggle
-bindsym $mod+u layout toggle split
 bindsym $mod+Shift+space floating toggle
 set $ws1 "1"
 set $ws2 "2"
@@ -179,4 +177,5 @@ bar {
 
         }
 }
-exec --no-startup-id xautolock -time 15 -locker 'i3lock --color=000000' -corners +00-
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -e -f -i $HOME/.config/wallpapers/rose.jpg' -corners +00-
+exec --no-startup-id dunst 

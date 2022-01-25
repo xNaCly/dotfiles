@@ -73,10 +73,6 @@ function fish_greeting
 	#pfetch
 end
 
-# cat ~/.cache/wal/sequences
-wal -q -s -t -R
-clear
-
 fish_vi_key_bindings
 
 # Catppuccin color palette

@@ -55,7 +55,7 @@
     idle_threshold = 120
 
     # Font and typography settings
-    font = Hack Nerd Font 10
+    font = JetBrains Mono 12
     alignment = left
     word_wrap = yes
 

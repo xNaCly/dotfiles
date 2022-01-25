@@ -1,23 +1,14 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_status $status
-
-    prompt_login
-
-    echo -n ':'
-
-    # PWD
-    set_color $fish_color_cwd
-    echo -n (prompt_pwd)
-    set_color normal
-
-    __terlar_git_prompt
-    fish_hg_prompt
-    echo
-
-    if not test $last_status -eq 0
-        set_color $fish_color_error
+function fish_prompt
+    if test -n "$SSH_TTY"
+        echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n '➤ '
+    echo -n (set_color blue)(prompt_pwd)' '
+
+    set_color -o
+    if fish_is_root_user
+        echo -n (set_color red)'# '
+    end
+    echo -n (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
     set_color normal
 end

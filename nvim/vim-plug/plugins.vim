@@ -7,6 +7,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'nvim-lualine/lualine'
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'sheerun/vim-polyglot'
     Plug 'deoplete-plugins/deoplete-clang'

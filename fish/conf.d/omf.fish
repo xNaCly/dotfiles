@@ -73,7 +73,7 @@ function fish_greeting
 	#pfetch
 end
 
-fish_vi_key_bindings
+# fish_vi_key_bindings
 
 # Catppuccin color palette
 

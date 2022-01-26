@@ -6,9 +6,10 @@
     follow = mouse
 
     # Geometery reference --> [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "300x0"
-    origin = top-right
-    offset = 10x35
+    width = 300
+    heigth = 50
+    origin = bottom-right
+    offset = 15x15 
 
     # Radius of the four corners of the notification
     corner_radius = 0
@@ -46,7 +47,6 @@
 
     # The frame color and width of the notification
     frame_width = 1
-    frame_color = "#788792"
 
 
     sort = yes
@@ -122,19 +122,24 @@
     # for volume/brightness notification
     background = "#1e1d2f"
     foreground = "#d9e0ee"
-    frame_color = "#F5C2E7"
+    frame_color = "#6e6c7e"
     timeout = 3
-    icon = /dev/null
 
 [urgency_normal]
     background = "#1e1d2f"
     foreground = "#d9e0ee"
-    frame_color = "#F5C2E7"
+#    frame_color = "#f5c2e7"
     timeout = 10
-    icon = /dev/null
 
 [urgency_critical]
+#    frame_color = "#f28fad"
     timeout = 0
     icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
+
+[desktop_entry="Spotify"]
+    background = "#1e1d2f"
+    foreground = "#d9e0ee"
+#    frame_color = "#abe9b3"
+    timeout = 10
 
 vim: ft=cfg

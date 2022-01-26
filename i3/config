@@ -44,7 +44,7 @@ bindsym $mod+shift+s exec "flameshot gui"
 # binds mod+e to launch files
 bindsym $mod+e exec "thunar"
 # binds mod+w to switch wallpapers
-# bindsym $mod+w exec "sh ~/.config/i3/scripts/select.sh"
+bindsym $mod+w exec "sh ~/.config/i3/scripts/select.sh"
 # media control
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -55,7 +55,7 @@ exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec_always --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec_always --no-startup-id "picom -f"
-# exec_always --no-startup-id "wal -s -t -R" #"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
+exec_always --no-startup-id "wal -s -t -R" #"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
@@ -178,5 +178,4 @@ bar {
         }
 }
 exec --no-startup-id xautolock -time 15 -locker 'i3lock -e -f -i $HOME/.config/wallpapers/rose.jpg' -corners +00-
-exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst 

@@ -7,7 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-    Plug 'nvim-lualine/lualine'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'sheerun/vim-polyglot'
@@ -19,11 +19,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'jiangmiao/auto-pairs'
     Plug 'mhinz/vim-startify'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 let g:ale_linters = {
   \ 'c': ['clang']
   \}
+
+
+lua << END
+require('lualine').setup({
+  options = {
+    theme = 'nightfly',
+  },
+})
+END

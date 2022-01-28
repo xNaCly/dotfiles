@@ -178,4 +178,4 @@ bar {
         }
 }
 exec --no-startup-id xautolock -time 15 -locker 'i3lock -e -f -i $HOME/.config/wallpapers/rose.jpg' -corners +00-
-exec --no-startup-id dunst 
+exec --no-startup-id dunst

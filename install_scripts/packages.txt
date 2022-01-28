@@ -1,10 +1,10 @@
 i3
-python
+python-pip
 dunst
 alacritty
 ranger
 w3m
 dunst
-feh
 picom
 fish
+imagemagick

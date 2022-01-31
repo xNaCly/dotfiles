@@ -1,0 +1,21 @@
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 17- | xargs echo | awk '{ print $2" "$3}'
+interval=3600
+
+[mute_indicator]
+command=sh ~/.config/i3blocks/scripts/get_muted.sh 
+interval=1
+
+[volume]
+command=pamixer --get-volume | awk '{print $1"%"}'
+interval=1
+
+# Update time every 30 seconds
+[time]
+command=date +%H:%M" "%d." "%b
+interval=30
+
+[date]
+command=date %d." "%b
+interval=60

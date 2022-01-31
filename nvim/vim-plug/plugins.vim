@@ -28,11 +28,10 @@ let g:ale_linters = {
   \ 'c': ['clang']
   \}
 
-
 lua << END
 require('lualine').setup({
   options = {
-    theme = 'nightfly',
+    theme = 'palenight',
   },
 })
 END

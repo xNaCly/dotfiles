@@ -67,7 +67,7 @@
 
     # Format for how notifications will be displayed
     #format = "<b>%s</b>\n%b"
-    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
+    format = "<span><b>%s %p</b></span>\n%b"
 
     show_age_threshold = 60
 
@@ -101,7 +101,7 @@
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
 
-    startup_notification = false
+    startup_notification = true
 
     force_xinerama = false
 
@@ -117,29 +117,30 @@
     mouse_middle_click = close_all
     mouse_right_click = close_current
 
+[urgency_critical]
+#    frame_color = "#f28fad"
+    timeout = 0
+    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
+
+[spotify]
+    appname="Spotify"
+    background = "#1e1d2f"
+    foreground = "#d9e0ee"
+    frame_color = "#abe9b3"
+    timeout = 10
+
+[urgency_normal]
+    background = "#1e1d2f"
+    foreground = "#d9e0ee"
+    frame_color = "#f5c2e7"
+    timeout = 10
+
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
     background = "#1e1d2f"
     foreground = "#d9e0ee"
     frame_color = "#6e6c7e"
-    timeout = 3
-
-[urgency_normal]
-    background = "#1e1d2f"
-    foreground = "#d9e0ee"
-#    frame_color = "#f5c2e7"
-    timeout = 10
-
-[urgency_critical]
-#    frame_color = "#f28fad"
-    timeout = 0
-    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
-
-[desktop_entry="Spotify"]
-    background = "#1e1d2f"
-    foreground = "#d9e0ee"
-#    frame_color = "#abe9b3"
-    timeout = 10
+    timeout = 1
 
 vim: ft=cfg

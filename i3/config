@@ -35,7 +35,7 @@ bindsym ctrl+space exec "dunstctl close"
 # binds mod+c to launch term in i3 config dir
 bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
 # binds mod+g to launch keybind documentation
-bindsym $mod+g exec "python3 ~/.config/i3/scripts/keybinds.py && zathura ~/.config/i3/scripts/keybinds_temp.pdf"
+bindsym $mod+g exec "python3 ~/.config/i3/scripts/keybinds/keybinds.py && zathura ~/.config/i3/scripts/keybinds/keybinds_temp.pdf"
 # binds mod+b to launch browser
 bindsym $mod+b exec $browser 
 # binds mod+s to launch settings
@@ -61,7 +61,7 @@ exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
 exec --no-startup-id i3-msg "exec discord"
 exec --no-startup-id i3-msg "exec flameshot"
-for_window [class="Spotify"] move to workspace $ws4 # https://github.com/i3/i3/issues/2060
+for_window [class="Spotify"] move to workspace $ws4 #https://github.com/i3/i3/issues/2060
 for_window [class="Brave-browser"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws1
 assign [class="discord"] → $ws3
@@ -85,11 +85,9 @@ bindsym $mod+d exec "i3-dmenu-desktop --dmenu='dmenu -i -p 'App:'' "
 # --- default --- #
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 10 
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 10
+bindsym XF86AudioMute exec "sh ~/.config/i3/scripts/volume.sh"
 floating_modifier $mod
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
@@ -155,7 +153,8 @@ default_border pixel 1
 default_floating_border normal 2
 bar {
         bindsym button1 nop
-        status_command i3status -c ~/.config/i3status/i3status.conf
+        status_command i3blocks
+        #status_command i3status -c ~/.config/i3status/i3status.conf
         #status_command i3status -c ~/.config/i3status/i3status_without_icons.conf
         #status_command i3status -c ~/.config/i3status/i3status_clean.conf
         i3bar_command i3bar --transparency
@@ -166,7 +165,7 @@ bar {
         colors {
                 background $background60
                 statusline $text_color1
-                separator $accent1
+                separator $text_color80
                 
                 #class                  border          bg              text    
                 focused_workspace       $text_color1        $background60        $text_color1

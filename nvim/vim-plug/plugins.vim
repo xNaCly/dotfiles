@@ -7,6 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'Valloric/YouCompleteMe' 
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
@@ -27,6 +28,9 @@ call plug#end()
 let g:ale_linters = {
   \ 'c': ['clang']
   \}
+
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
 
 lua << END
 require('lualine').setup({

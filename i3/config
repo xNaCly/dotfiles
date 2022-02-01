@@ -11,23 +11,25 @@
 set $browser "brave"
 set $term "alacritty"
 set $wallpaper_path ~/.config/wallpapers
-set $font JetBrains Mono
+set $font JetBrains Mono Nerd Font
 set $font_size 10
-set $gaps 12
+set $gaps 10
 set $Locker i3lock --color=000000 && sleep 1
 hide_edge_borders smart
 focus_follows_mouse no
-set_from_resource $background i3wm.color0
-set_from_resource $background2 i3wm.color0
-set_from_resource $accent1 i3wm.color2 
-set_from_resource $accent2 i3wm.color4
-set_from_resource $accent3 i3wm.color5
-set_from_resource $text_color1 i3wm.color6
-set_from_resource $text_color2 i3wm.color7
-set_from_resource $text_color3 i3wm.color8
-set_from_resource $color_danger i3wm.color9
-set_from_resource $color_warning i3wm.color10 
-set_from_resource $color_success i3wm.color11
+
+set $background "#1e1d2f"
+set $background_trans "#1e1d2f60"
+set $background2 "#1E1E2E"
+set $accent1 "#DDB6F2"
+set $accent2 "#F5C2E7"
+set $accent3 "#E8A2AF"
+set $text_color1 "#6E6C7E"
+set $text_color2 "#988BA2"
+set $text_color3 "#C9CBFF"
+set $color_danger "#F28FAD"
+set $color_warning "#FAE3B0"
+set $color_success "#ABE9B3"
 
 set $mod Mod4
 # binds ctrl+space to close the topmost notification
@@ -61,7 +63,7 @@ exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
 exec --no-startup-id i3-msg "exec discord"
 exec --no-startup-id i3-msg "exec flameshot"
-for_window [class="Spotify"] move to workspace $ws4 #https://github.com/i3/i3/issues/2060
+for_window [class="Spotify"] move to workspace $ws4 
 for_window [class="Brave-browser"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws1
 assign [class="discord"] → $ws3
@@ -137,18 +139,18 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 mode "resize" {
-        bindsym h resize shrink width 20 px or 20 ppt
-        bindsym j resize grow height 20 px or 20 ppt
-        bindsym k resize shrink height 20 px or 20 ppt
-        bindsym l resize grow width 20 px or 20 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 # class                 border          bg              text            indicator
-client.focused          $text_color1        $accent1        $text_color1    $accent1
-client.unfocused        $text_color1    $text_color3    $text_color2    $accent3
+client.focused          $accent1        $accent1        $text_color1    $accent1
+client.unfocused        $background     $text_color3    $text_color2    $accent3
 default_border pixel 1
 default_floating_border normal 2
 bar {
@@ -163,16 +165,16 @@ bar {
         # strip_workspace_numbers true
         font pango:$font $font_size 
         colors {
-                background $background60
-                statusline $text_color1
-                separator $text_color80
+                background $background_trans
+                statusline $accent1
+                separator $text_color
                 
-                #class                  border          bg              text    
-                focused_workspace       $text_color1        $background60        $text_color1
-                active_workspace        $text_color1        $background60       $text_color1
-                inactive_workspace      $background60   $background60  $text_color1
-                urgent_workspace        $color_danger   $color_danger   $text_color1
-                binding_mode            $color_danger   $color_danger   $text_color1
+                #class                  border                  bg                      text    
+                focused_workspace       $accent1                $background_trans       $accent1
+                active_workspace        $accent1                $background_trans       $accent1
+                inactive_workspace      $background_trans       $background_trans       $text_color2
+                urgent_workspace        $color_danger           $color_danger           $text_color1
+                binding_mode            $color_danger           $color_danger           $text_color1
 
         }
 }

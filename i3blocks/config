@@ -1,6 +1,6 @@
-[last_commit]
-command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
-interval=600
+#[last_commit]
+#command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
+#interval=600
 
 [weather]
 command=sh ~/.config/i3blocks/scripts/get_weather.sh 
@@ -16,16 +16,18 @@ command=pamixer --get-volume | awk '{print $1"%"}'
 label=Volume: 
 interval=1
 
+[battery]
+command=acpi | awk ' { print $4 }' | sed 's/,*$//g'
+label=Battery: 
+interval=60
+
 [time]
 command=date +%H:%M
 label=Time: 
 interval=30
 
 [date]
-command=date +%d." "%b 
+command=date +%d." "%b"  "
 label=Date: 
 interval=60
-
-
-
 

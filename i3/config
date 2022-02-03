@@ -50,6 +50,10 @@ bindsym $mod+w exec "sh ~/.config/i3/scripts/select.sh"
 # media control
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
+bindsym XF86KbdBrightnessUp exec brightnessctl --device='smc::kbd_backlight' set +10
+bindsym XF86KbdBrightnessDown exec brightnessctl --device='smc::kbd_backlight' set 10-
+bindsym XF86MonBrightnessUp exec brightnessctl set +300
+bindsym XF86MonBrightnessDown exec brightnessctl set 300- 
 bindsym Print exec "flameshot full -c"
 # Restore GNOME's settings
 exec_always --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec

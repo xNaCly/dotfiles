@@ -8,7 +8,7 @@
 # this config supports dynamic color setting based on the background for i3, i3status/bar, terminal (alacritty), dunst and rofi
 
 # flags:
-set $browser "brave"
+set $browser "firefox"
 set $term "alacritty"
 set $wallpaper_path ~/.config/wallpapers
 set $font JetBrains Mono Nerd Font

@@ -55,7 +55,7 @@
     idle_threshold = 120
 
     # Font and typography settings
-    font = JetBrains Mono 12
+    font = JetBrains Mono Nerd Font 12
     alignment = left
     word_wrap = yes
 

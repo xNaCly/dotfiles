@@ -1,25 +1,21 @@
-#[last_commit]
-#command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
-#interval=600
+[last_commit]
+command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
+interval=180
 
 [weather]
 command=sh ~/.config/i3blocks/scripts/get_weather.sh 
 label=Forecast: 
 interval=1200
 
-[mute_indicator]
-command=sh ~/.config/i3blocks/scripts/get_muted.sh 
-interval=1
-
 [volume]
-command=pamixer --get-volume | awk '{print $1"%"}'
+command=sh ~/.config/i3blocks/scripts/volume_handler.sh 
 label=Volume: 
 interval=1
 
-[battery]
-command=acpi | awk ' { print $4 }' | sed 's/,*$//g'
-label=Battery: 
-interval=60
+#[battery]
+#command=acpi | awk ' { print $4 }' | sed 's/,*$//g'
+#label=Battery: 
+#interval=60
 
 [time]
 command=date +%H:%M

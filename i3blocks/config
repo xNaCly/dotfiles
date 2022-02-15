@@ -1,6 +1,11 @@
+[spotify]
+command=spotify-now -i "%artist - %title"
+interval=5
+label=Song: 
+
 [last_commit]
 command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
-interval=180
+interval=1800
 
 [weather]
 command=sh ~/.config/i3blocks/scripts/get_weather.sh 

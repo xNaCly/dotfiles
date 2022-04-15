@@ -11,3 +11,4 @@ neovim
 firefox
 flameshot
 pulseaudio
+pamixer

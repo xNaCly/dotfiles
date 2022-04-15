@@ -1,5 +1,5 @@
 i3
-python-pip
+python
 dunst
 kitty
 ranger
@@ -7,5 +7,6 @@ w3m
 picom
 fish
 imagemagick
-git
 neovim
+firefox
+flameshot

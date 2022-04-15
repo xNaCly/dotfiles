@@ -1,10 +1,11 @@
 i3
 python-pip
 dunst
-alacritty
+kitty
 ranger
 w3m
-dunst
 picom
 fish
 imagemagick
+git
+neovim

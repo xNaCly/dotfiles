@@ -1,11 +1,11 @@
 set number
 set hidden
 filetype plugin on
-syntax on                           " Enables syntax highlighing
+syntax on                               " Enables syntax highlighing
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set fileencoding=utf-8                  " The encoding written to file
-set ruler              			            " Show the cursor position all the time
+set ruler              			        " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set splitbelow                          " Horizontal splits will automatically be below
@@ -27,6 +27,9 @@ set termguicolors
 set incsearch
 set smartcase
 set nobackup
+"set cursorline
+set noshowmode
+set showtabline=1
 noremap <silent> <space> :nohlsearch<CR> " clear search results
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 let mapleader="\<space>"

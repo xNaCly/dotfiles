@@ -9,33 +9,37 @@
 
 # flags:
 set $browser "firefox"
-set $term "alacritty"
+set $term "kitty"
 set $wallpaper_path ~/.config/wallpapers
 set $font JetBrains Mono Nerd Font
 set $font_size 10
-set $gaps 10
-set $Locker i3lock --color=000000 && sleep 1
+set $gaps 0
 hide_edge_borders smart
+smart_gaps on
 focus_follows_mouse no
 
-set $background "#1e1d2f"
-set $background_trans "#1e1d2f60"
-set $background2 "#1E1E2E"
-set $accent1 "#DDB6F2"
-set $accent2 "#F5C2E7"
-set $accent3 "#E8A2AF"
-set $text_color1 "#6E6C7E"
-set $text_color2 "#988BA2"
-set $text_color3 "#C9CBFF"
-set $color_danger "#F28FAD"
-set $color_warning "#FAE3B0"
-set $color_success "#ABE9B3"
+#set $background "#1e1d2f"
+#set $background_trans "#1e1d2f60"
+#set $background2 "#1E1E2E"
+#set $accent1 "#DDB6F2"
+#set $accent2 "#F5C2E7"
+#set $accent3 "#E8A2AF"
+#set $text_color1 "#6E6C7E"
+#set $text_color2 "#988BA2"
+#set $text_color3 "#C9CBFF"
+#set $color_danger "#F28FAD"
+#set $color_warning "#FAE3B0"
+#set $color_success "#ABE9B3"
 
-set $mod Mod4
+set $mod Mod4 
+set $alt Mod1
+# binds mod+shift+l to locking the screen
+bindsym Control+$alt+l exec "xscreensaver-command -l"
+#bindsym $mod+shift+w exec "sh ~/.config/i3/scripts/screensaver.sh"
 # binds ctrl+space to close the topmost notification
 bindsym ctrl+space exec "dunstctl close"
 # binds mod+c to launch term in i3 config dir
-bindsym $mod+c exec "alacritty --working-directory=.config/i3/"
+bindsym $mod+c exec "kitty --directory=.config/i3/"
 # binds mod+g to launch keybind documentation
 bindsym $mod+g exec "python3 ~/.config/i3/scripts/keybinds/keybinds.py && zathura ~/.config/i3/scripts/keybinds/keybinds_temp.pdf"
 # binds mod+b to launch browser
@@ -46,7 +50,7 @@ bindsym $mod+shift+s exec "flameshot gui"
 # binds mod+e to launch files
 bindsym $mod+e exec "thunar"
 # binds mod+w to switch wallpapers
-bindsym $mod+w exec "sh ~/.config/i3/scripts/select.sh"
+# bindsym $mod+w exec "sh ~/.config/i3/scripts/select.sh"
 # media control
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -61,7 +65,7 @@ exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec_always --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec_always --no-startup-id "picom -f"
-exec_always --no-startup-id "wal -s -t -R" #"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
+#exec_always --no-startup-id "wal -s -t -R" #"wal -i $wallpaper_path && python3 ~/.config/i3/scripts/colors.py"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"
@@ -71,7 +75,7 @@ for_window [class="Spotify"] move to workspace $ws4
 for_window [class="Brave-browser"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws1
 assign [class="discord"] → $ws3
-assign [class="Alacritty"] → $ws2
+assign [class=$term] → $ws2
 for_window [class="Places"]                             floating enable
 for_window [class="Tor Browser"]                        floating enable
 for_window [class="Gnome-screenshot"]                   floating enable
@@ -85,11 +89,12 @@ for_window [window_type="menu"]                         floating enable
 title_align center
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
-font pango:$font $font_size-2
+font pango:$font $font_size
 #bindsym $mod+d exec "sh ~/.config/i3/scripts/rofi.sh" 
-bindsym $mod+d exec "i3-dmenu-desktop --dmenu='dmenu -i -p 'App:' -fn 'JetBrains Mono Nerd Font'' " 
+#bindsym $mod+d exec "i3-dmenu-desktop --dmenu='dmenu -i -p 'App:' -fn 'JetBrains Mono Nerd Font:12''" 
+bindsym $mod+d exec "rofi -show drun"
 # --- default --- #
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -153,10 +158,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # class                 border          bg              text            indicator
-client.focused          $accent1        $accent1        $text_color1    $accent1
-client.unfocused        $background     $text_color3    $text_color2    $accent3
-default_border pixel 1
-default_floating_border normal 2
+#client.focused          $accent1        $accent1        $text_color1    $accent1
+#client.unfocused        $background     $text_color3    $text_color2    $accent3
+#default_border pixel 1
+#default_floating_border normal 2
 bar {
         bindsym button1 nop
         status_command i3blocks
@@ -167,20 +172,20 @@ bar {
         position top
         separator_symbol "/" 
         # strip_workspace_numbers true
-        font pango:$font $font_size 
         colors {
-                background $background_trans
-                statusline $accent1
-                separator $text_color1
+                #background $background_trans
+                #statusline $accent1
+                #separator $text_color1
                 
                 #class                  border                  bg                      text    
-                focused_workspace       $accent1                $background_trans       $accent1
-                active_workspace        $accent1                $background_trans       $accent1
-                inactive_workspace      $background_trans       $background_trans       $text_color2
-                urgent_workspace        $color_danger           $color_danger           $text_color1
-                binding_mode            $color_danger           $color_danger           $text_color1
+                #focused_workspace       $accent1                $background_trans       $accent1
+                #active_workspace        $accent1                $background_trans       $accent1
+                #inactive_workspace      $background_trans       $background_trans       $text_color3
+                #urgent_workspace        $color_danger           $color_danger           $text_color1
+                #binding_mode            $color_danger           $color_danger           $text_color1
 
         }
 }
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -e -f -i $HOME/.config/wallpapers/rose.jpg' -corners +00-
 exec --no-startup-id dunst
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xscreensaver

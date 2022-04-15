@@ -1,20 +1,20 @@
-[spotify]
-command=spotify-now -i "%artist - %title"
-interval=5
-label=Song: 
+#[spotify]
+#command=spotify-now -i "%artist - %title"
+#interval=5
+#label=Song: 
 
-[last_commit]
-command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
-interval=1800
+#[last_commit]
+#command=python3 ~/.config/i3blocks/scripts/get_last_commit.py
+#interval=1800
 
 [weather]
 command=sh ~/.config/i3blocks/scripts/get_weather.sh 
-label=Forecast: 
+label=Fore: 
 interval=1200
 
 [volume]
 command=sh ~/.config/i3blocks/scripts/volume_handler.sh 
-label=Volume: 
+label=Vol: 
 interval=1
 
 #[battery]

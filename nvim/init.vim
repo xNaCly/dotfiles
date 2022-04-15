@@ -6,9 +6,7 @@
 "╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝   ╚══════╝    ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 " personal config
 source $HOME/.config/nvim/xnacly.vim
-" themes
-source $HOME/.config/nvim/themes/airline.vim
 " plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
-colorscheme catppuccin
+"colorscheme meh

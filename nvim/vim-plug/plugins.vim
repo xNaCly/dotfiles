@@ -7,10 +7,11 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'wakatime/vim-wakatime'
+    Plug 'davidosomething/vim-colors-meh'
     Plug 'Valloric/YouCompleteMe' 
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'sheerun/vim-polyglot'
     Plug 'deoplete-plugins/deoplete-clang'
     Plug 'dense-analysis/ale'
@@ -20,9 +21,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'jiangmiao/auto-pairs'
     Plug 'mhinz/vim-startify'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
-
 call plug#end()
 
 let g:ale_linters = {
@@ -35,7 +33,7 @@ let g:netrw_winsize = 25
 lua << END
 require('lualine').setup({
   options = {
-    theme = 'palenight',
-  },
+    theme = 'codedark',
+  }
 })
 END

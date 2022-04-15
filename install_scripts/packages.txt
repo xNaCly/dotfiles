@@ -10,3 +10,4 @@ imagemagick
 neovim
 firefox
 flameshot
+pulseaudio

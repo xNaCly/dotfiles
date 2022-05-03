@@ -8,5 +8,3 @@
 source $HOME/.config/nvim/xnacly.vim
 " plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
-
-"colorscheme meh

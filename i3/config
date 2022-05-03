@@ -120,10 +120,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # class                 border          bg              text            indicator
-client.focused          $accent1        $accent1        $text_color1    $accent1
-client.unfocused        $background     $text_color3    $text_color2    $accent3
-default_border pixel 1
-default_floating_border normal 2
+client.focused          $accent3        $accent1        $text_color1    $accent2
+client.unfocused        $background     $background     $text_color2    $background
+default_border pixel 2
+default_floating_border normal 5
 bar {
         bindsym button1 nop
         status_command i3blocks

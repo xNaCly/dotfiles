@@ -38,7 +38,7 @@ lua << END
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
-  black  = '#080808',
+  black  = '#1e1d2f',
   white  = '#c6c6c6',
   red    = '#ff5189',
   violet = '#d183e8',

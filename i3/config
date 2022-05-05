@@ -131,7 +131,7 @@ bar {
         position top
         separator_symbol "/" 
         colors {
-                background $background_trans
+                background $background
                 statusline $accent1
                 separator $accent3
                 

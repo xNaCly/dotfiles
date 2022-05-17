@@ -9,7 +9,7 @@
 
 [weather]
 command=sh ~/.config/i3blocks/scripts/get_weather.sh 
-label=Fore: 
+label=Wetter: 
 interval=1200
 
 [volume]
@@ -24,11 +24,11 @@ interval=1
 
 [time]
 command=date +%H:%M
-label=Time: 
+label=Zeit: 
 interval=30
 
 [date]
-command=date +%d." "%b"  "
-label=Date: 
+command=date +%d." "%b
+label=Datum: 
 interval=60
 

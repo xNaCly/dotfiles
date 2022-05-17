@@ -5,21 +5,8 @@
 #██╔╝ ██╗██║ ╚████║██║  ██║╚██████╗███████╗██║       ██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 # https://github.com/xnacly/dotfiles
-set $background "#1e1d2f"
-set $background_trans "#1e1d2f60"
-set $background2 "#1E1E2E"
-set $accent1 "#DDB6F2"
-set $accent2 "#F5C2E7"
-set $accent3 "#E8A2AF"
-set $text_color1 "#D9E0EE"
-set $text_color2 "#988BA2"
-set $text_color3 "#C9CBFF"
-set $color_danger "#F28FAD"
-set $color_warning "#FAE3B0"
-set $color_success "#ABE9B3"
 set $browser "firefox"
 set $term "kitty"
-set $wallpaper_path ~/.config/wallpapers
 set $font JetBrains Mono Nerd Font
 set $font_size 10
 set $gaps 0
@@ -30,7 +17,6 @@ set $mod Mod4
 set $alt Mod1
 bindsym Control+$alt+l exec "xscreensaver-command -l"
 bindsym ctrl+space exec "dunstctl close"
-bindsym $mod+c exec "kitty --directory=.config/i3/"
 bindsym $mod+b exec $browser 
 bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+e exec "thunar"
@@ -118,30 +104,13 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-# class                 border          bg              text            indicator
-client.focused          $accent3        $accent1        $text_color1    $accent2
-client.unfocused        $background     $background     $text_color2    $background
-default_border pixel 2
-default_floating_border normal 5
 bar {
         bindsym button1 nop
         status_command i3blocks
         i3bar_command i3bar --transparency
         position top
         separator_symbol "/" 
-        colors {
-                background $background
-                statusline $accent1
-                separator $text_color1
-                
-                #class                  border                  bg                      text    
-                focused_workspace       $accent1                $accent1                $text_color1
-                active_workspace        $accent1                $background_trans       $accent1
-                inactive_workspace      $background_trans       $background_trans       $text_color2
-                urgent_workspace        $color_danger           $color_danger           $text_color1
-                binding_mode            $color_danger           $color_danger           $text_color1
-
-        }
+        colors {}
 }
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore

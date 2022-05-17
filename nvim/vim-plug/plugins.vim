@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'wakatime/vim-wakatime'
     Plug 'davidosomething/vim-colors-meh'
-    Plug 'Valloric/YouCompleteMe' 
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'sheerun/vim-polyglot'

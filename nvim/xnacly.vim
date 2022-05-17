@@ -32,6 +32,7 @@ set noshowmode
 set showtabline=1
 noremap <silent> <space> :nohlsearch<CR> " clear search results
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-p> :FZF<CR>
 let mapleader="\<space>"
 noremap ; :YcmCompleter GetDoc<CR>
 set background=dark

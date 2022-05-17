@@ -27,14 +27,16 @@ set termguicolors
 set incsearch
 set smartcase
 set nobackup
-"set cursorline
 set noshowmode
 set showtabline=1
-noremap <silent> <space> :nohlsearch<CR> " clear search results
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-nnoremap <silent> <C-p> :FZF<CR>
+
 let mapleader="\<space>"
-noremap ; :YcmCompleter GetDoc<CR>
+noremap <silent> <Leader>c :nohlsearch<CR>
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>f :FZF<CR>
+noremap <silent> ; :YcmCompleter GetDoc<CR>
 set background=dark
 set completeopt-=preview
 autocmd BufWritePost * YcmCompleter Format <afile>
+let asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert,noselect,preview

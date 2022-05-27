@@ -2,11 +2,11 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'neoclide/coc.nvim'
+    Plug 'tpope/vim-commentary'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'wakatime/vim-wakatime'
     Plug 'davidosomething/vim-colors-meh'
@@ -14,8 +14,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'sheerun/vim-polyglot'
-    Plug 'deoplete-plugins/deoplete-clang'
-    Plug 'dense-analysis/ale'
     Plug 'scrooloose/NERDTree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ryanoasis/vim-devicons'

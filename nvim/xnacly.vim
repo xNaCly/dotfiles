@@ -29,14 +29,28 @@ set smartcase
 set nobackup
 set noshowmode
 set showtabline=1
+set spell!
+set spelllang=en,de
 
 let mapleader="\<space>"
 noremap <silent> <Leader>c :nohlsearch<CR>
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>f :FZF<CR>
-noremap <silent> ; :YcmCompleter GetDoc<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+noremap <silent> ; <CR>
+nmap <silent> gd <Plug>(coc-definition)
 set background=dark
 set completeopt-=preview
-autocmd BufWritePost * YcmCompleter Format <afile>
 let asyncomplete_auto_completeopt = 0
 set completeopt=menuone,noinsert,noselect,preview

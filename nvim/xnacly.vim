@@ -54,3 +54,4 @@ set background=dark
 set completeopt-=preview
 let asyncomplete_auto_completeopt = 0
 set completeopt=menuone,noinsert,noselect,preview
+au BufWritePost,FileWritePost *.tex :silent !make all

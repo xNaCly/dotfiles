@@ -13,6 +13,7 @@ set EDITOR "nvim"
 ### Path extras ###
 export PATH="/home/$USER/Applications:$PATH"
 export PATH="/home/$USER/.cargo/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 
 ### aliases ###
 

@@ -5,11 +5,13 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'iamcco/markdown-preview.nvim'
+    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'neoclide/coc.nvim'
     Plug 'tpope/vim-commentary'
     Plug 'catppuccin/nvim', {'as': 'catppuccin'}
     Plug 'wakatime/vim-wakatime'
-    Plug 'davidosomething/vim-colors-meh'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
@@ -22,7 +24,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-startify'
 call plug#end()
 
-colorscheme catppuccin 
+" colorscheme catppuccin
+let g:tokyonight_style = "night"
+colorscheme tokyonight
 
 let g:ale_linters = {
   \ 'c': ['clang']
@@ -33,6 +37,8 @@ let g:netrw_winsize = 25
 
 lua << END
 -- stylua: ignore
+
+require'colorizer'.setup()
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
@@ -45,12 +51,12 @@ local colors = {
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
+    a = { fg = colors.black, bg = colors.blue },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
+  insert = { a = { fg = colors.black, bg = colors.violet } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.red } },
 

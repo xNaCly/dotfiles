@@ -5,32 +5,34 @@
 #██╔╝ ██╗██║ ╚████║██║  ██║╚██████╗███████╗██║       ██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 # https://github.com/xnacly/dotfiles
-set $background "#1e1d2f"
-set $background_trans "#1e1d2f60"
-set $background2 "#1E1E2E"
-set $accent1 "#DDB6F2"
-set $accent2 "#F5C2E7"
-set $accent3 "#E8A2AF"
-set $text_color1 "#D9E0EE"
-set $text_color2 "#988BA2"
-set $text_color3 "#C9CBFF"
-set $color_danger "#F28FAD"
-set $color_warning "#FAE3B0"
-set $color_success "#ABE9B3"
+set $background "#1a1b26"
+set $background_trans "#1a1b2660"
+set $background2 "#1f2335"
+set $accent1 "#7aa2f7"
+set $accent1_trans "#7aa2f760"
+set $accent2 "#2ac3de"
+set $accent3 "#bb9af7"
+set $text_color1 "#c0caf5"
+set $text_color2 "#a9b1d6"
+set $text_color3 "#3b4261"
+set $color_danger "#f7768e"
+set $color_warning "#bb7a61"
+set $color_success "#9ece6a"
 set $browser "firefox"
 set $term "kitty"
 set $wallpaper_path ~/.config/wallpapers
 set $font JetBrains Mono Nerd Font
 set $font_size 10
-set $gaps 0
+set $gaps 10
 hide_edge_borders smart
-smart_gaps on
+# smart_gaps on
 focus_follows_mouse no
 set $mod Mod4 
 set $alt Mod1
 bindsym Control+$alt+l exec "xscreensaver-command -l"
 bindsym ctrl+space exec "dunstctl close"
 bindsym $mod+c exec "kitty --directory=.config/i3/"
+bindsym $mod+s exec "surf https://duckduckgo.com"
 bindsym $mod+b exec $browser 
 bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+e exec "thunar"
@@ -51,11 +53,12 @@ for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable 
 for_window [window_type="menu"]                         floating enable
-title_align center
+title_align left
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
 font pango:$font $font_size
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
+#bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
+bindsym $mod+d exec "rofi -show drun" 
 exec --no-startup-id nm-applet
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
@@ -75,10 +78,10 @@ bindsym $mod+comma split v
 bindsym $mod+period split h
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
+set $ws1 "1:www"
+set $ws2 "2:cmd"
+set $ws3 "3:com"
+set $ws4 "4:mus"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -119,27 +122,28 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # class                 border          bg              text            indicator
-client.focused          $accent3        $accent1        $text_color1    $accent2
-client.unfocused        $background     $background     $text_color2    $background
-default_border pixel 2
-default_floating_border normal 5
+client.focused          $accent1        $accent1        $background     $accent1
+client.unfocused        $accent1_trans  $accent1_trans  $background    $accent1_trans
+default_border none
 bar {
         bindsym button1 nop
         status_command i3blocks
         i3bar_command i3bar --transparency
         position top
+        tray_output none
+        modifier $mod+$alt
         separator_symbol "/" 
+        strip_workspace_numbers yes
         colors {
-                background $background
+                background $background_trans
                 statusline $accent1
-                separator $text_color1
                 
                 #class                  border                  bg                      text    
-                focused_workspace       $accent1                $accent1                $text_color1
+                focused_workspace       $accent1                $accent1                $background
                 active_workspace        $accent1                $background_trans       $accent1
-                inactive_workspace      $background_trans       $background_trans       $text_color2
+                inactive_workspace      $background             $background             $text_color2
                 urgent_workspace        $color_danger           $color_danger           $text_color1
-                binding_mode            $color_danger           $color_danger           $text_color1
+                binding_mode            $color_danger           $color_danger           $background
 
         }
 }
@@ -153,5 +157,4 @@ exec --no-startup-id i3-msg "exec spotify"
 exec --no-startup-id i3-msg "exec discord"
 exec --no-startup-id i3-msg "exec flameshot"
 exec --no-startup-id i3-msg "exec thunar --deamon"
-exec_always --no-startup-id xsetroot -solid "#000"
 exec_always --no-startup-id "gnome-keyring-daemon --start"

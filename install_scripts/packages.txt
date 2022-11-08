@@ -1,0 +1,14 @@
+i3
+python
+dunst
+kitty
+ranger
+w3m
+picom
+fish
+imagemagick
+neovim
+firefox
+flameshot
+pulseaudio
+pamixer

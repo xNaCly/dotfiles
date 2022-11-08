@@ -12,3 +12,5 @@ firefox
 flameshot
 pulseaudio
 pamixer
+exa
+dmenu

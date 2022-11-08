@@ -56,8 +56,8 @@ title_align left
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
 font pango:$font $font_size
-#bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
-bindsym $mod+d exec "rofi -show drun" 
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
+# bindsym $mod+d exec "rofi -show drun" 
 exec --no-startup-id nm-applet
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5

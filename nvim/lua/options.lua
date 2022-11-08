@@ -28,3 +28,4 @@ o.nobackup = true
 o.spell = true
 -- TODO: spellcheck lang
 o.background = "dark"
+o.cursorline = true

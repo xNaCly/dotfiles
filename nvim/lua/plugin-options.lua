@@ -3,6 +3,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 0
 
 require 'colorizer'.setup()
+require("nvim-tree").setup()
 
 local colors = {
   blue   = '#80a0ff',

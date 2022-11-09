@@ -15,10 +15,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'wakatime/vim-wakatime'
     Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install()'] })
     Plug 'nvim-lualine/lualine.nvim'
-    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'sheerun/vim-polyglot'
-    Plug 'scrooloose/NERDTree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-tree/nvim-tree.lua'
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'jiangmiao/auto-pairs'

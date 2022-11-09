@@ -26,7 +26,7 @@ end
 
 vim.g.mapleader = " "
 
-map("n", "<C-b>", ":NERDTreeToggle<CR>", {silent = true})
+map("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true})
 map("n", "<Leader>f", ":FZF<CR>", {silent = true})
 map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}

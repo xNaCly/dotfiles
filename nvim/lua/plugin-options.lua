@@ -1,8 +1,10 @@
 vim.cmd([[colorscheme tokyonight-night]])
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 0
+vim.cmd([[let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}]])
+vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
 
-require 'colorizer'.setup()
+require('colorizer').setup()
 require("nvim-tree").setup()
 
 local colors = {

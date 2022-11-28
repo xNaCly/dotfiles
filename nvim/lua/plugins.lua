@@ -14,12 +14,11 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'wakatime/vim-wakatime'
     Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install()'] })
+    Plug('junegunn/fzf.vim')
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'sheerun/vim-polyglot'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'jiangmiao/auto-pairs'
     Plug 'mhinz/vim-startify'
 vim.call('plug#end')

@@ -25,7 +25,6 @@ o.termguicolors = true
 o.incsearch = true
 o.smartcase = true
 o.backup = false
-o.spell = true
--- TODO: spellcheck lang
+-- o.spell = true
 o.background = "dark"
 o.cursorline = true

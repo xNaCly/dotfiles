@@ -4,6 +4,14 @@ vim.g.netrw_winsize = 0
 vim.cmd([[let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}]])
 vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
 
+require("bufferline").setup{
+    options = {
+        mode = "tabs",
+        separator_style = "slant",
+        diagnostics = "coc"
+    }
+}
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust", "help"},

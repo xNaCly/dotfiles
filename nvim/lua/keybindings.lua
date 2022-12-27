@@ -26,11 +26,12 @@ end
 
 vim.g.mapleader = " "
 
+map("n", "gd", "<Plug>(coc-definition)", {silent = true})
+map("n", "gr", "<Plug>(coc-references)", {silent = true})
 map("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true})
 map("n", "<Leader>f", ":FZF<CR>", {silent = true})
 map("n", "<Leader>p", ":Rg<CR>", {silent = true})
 map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
--- move selection using K or J
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}

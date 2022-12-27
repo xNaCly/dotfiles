@@ -1,5 +1,6 @@
 {
     "diagnostic.checkCurrentLine": true,
+    "coc.preferences.formatOnSave": true,
     "diagnostic.virtualText": true,
     "diagnostic.hintSign": "H",
     "diagnostic.infoSign": "I",

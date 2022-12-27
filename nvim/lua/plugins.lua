@@ -7,8 +7,9 @@ endif
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+    Plug 'yggdroot/indentLine'
+    Plug 'akinsho/bufferline.nvim'
     Plug('folke/tokyonight.nvim', { branch = 'main' })
-    Plug 'iamcco/markdown-preview.nvim'
     Plug 'neoclide/coc.nvim'
     Plug 'tpope/vim-commentary'
     Plug 'wakatime/vim-wakatime'

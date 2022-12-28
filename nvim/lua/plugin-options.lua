@@ -1,17 +1,23 @@
+-- set colorsheme
 vim.cmd([[colorscheme tokyonight-night]])
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 0
+
+-- define fzf config, window size, preview using bat, etc
 vim.cmd([[let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}]])
 vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
 
+-- bufferline config
 require("bufferline").setup{
     options = {
+        -- only display tabs, hide buffers
         mode = "tabs",
+        -- style for kitty terminal
         separator_style = "slant",
+        -- display coc diagnostics
         diagnostics = "coc"
     }
 }
 
+-- treesitter config
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust", "help"},
@@ -43,8 +49,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- nvim tree setup
 require("nvim-tree").setup()
 
+-- colors for my custom line
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
@@ -73,6 +81,7 @@ local bubbles_theme = {
   },
 }
 
+-- lualine
 require('lualine').setup {
   options = {
     theme = bubbles_theme,

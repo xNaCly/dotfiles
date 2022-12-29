@@ -52,6 +52,13 @@ require'nvim-treesitter.configs'.setup {
 -- nvim tree setup
 require("nvim-tree").setup()
 
+
+-- toggleterm tree setup
+require("toggleterm").setup{
+    open_mapping = [[<c-J>]],
+    direction = 'float',
+}
+
 -- colors for my custom line
 local colors = {
   blue   = '#80a0ff',

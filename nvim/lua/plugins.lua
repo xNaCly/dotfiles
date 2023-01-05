@@ -8,6 +8,9 @@ endif
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+    -- toggle floating term
+    Plug 'akinsho/toggleterm.nvim'
+
     -- highlights indent
     Plug 'yggdroot/indentLine'
 

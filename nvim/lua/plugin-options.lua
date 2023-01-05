@@ -5,6 +5,8 @@ vim.cmd([[colorscheme tokyonight-night]])
 vim.cmd([[let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}]])
 vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
 
+vim.cmd([[command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument]])
+
 -- bufferline config
 require("bufferline").setup{
     options = {

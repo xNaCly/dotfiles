@@ -76,3 +76,5 @@ o.background = "dark"
 o.cursorline = true
 
 o.swapfile = false
+
+o.colorcolumn = "140"

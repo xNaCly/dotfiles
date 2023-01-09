@@ -8,6 +8,9 @@ endif
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+    -- sticky scroll
+    Plug 'nvim-treesitter/nvim-treesitter-context'
+
     -- toggle floating term
     Plug 'akinsho/toggleterm.nvim'
 
@@ -50,4 +53,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
     -- startup interface
     Plug 'mhinz/vim-startify'
+
+    -- color highlighting
+    Plug 'norcalli/nvim-colorizer.lua'
 vim.call('plug#end')

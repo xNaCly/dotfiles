@@ -7,6 +7,12 @@ vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
 
 vim.cmd([[command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument]])
 
+-- run prettier before saving
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.*",
+  callback = function () vim.cmd([[:Prettier]]) end,
+})
+
 -- bufferline config
 require("bufferline").setup{
     options = {
@@ -54,6 +60,8 @@ require'nvim-treesitter.configs'.setup {
 -- nvim tree setup
 require("nvim-tree").setup()
 
+-- nvim colorizer setup
+require("colorizer").setup()
 
 -- toggleterm tree setup
 require("toggleterm").setup{

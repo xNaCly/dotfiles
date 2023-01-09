@@ -4,23 +4,23 @@
 # interval=30
 
 [uptime]
-command=uptime | awk '{ print $3 }' | sed 's/,//g'
-label=up: 
+command=uptime | awk '{ printf "["; print $3 "min]" }' | sed 's/,//g'
+label=
 interval=60
 
 [memory]
-command=free -m | tail -n2 | head -n1 | awk '{ print $3 " mb"}'
-label=mem: 
+command=free -m | tail -n2 | head -n1 | awk '{ printf "["; print $3 "mb]"}'
+label=
 interval=10
 
-# [weather]
-# command=sh ~/.config/i3blocks/scripts/get_weather.sh
-# label=weather: 
-# interval=1200
+[weather]
+command=sh ~/.config/i3blocks/scripts/get_weather.sh
+label=
+interval=1200
 
 [volume]
 command=sh ~/.config/i3blocks/scripts/volume_handler.sh 
-label=vol: 
+label=
 interval=1
 
 #[battery]
@@ -29,7 +29,7 @@ interval=1
 #interval=60
 
 [date]
-command=date +%H:%M" "%d." "%b" " 
+command=date +%H:%M" "%d." "%b | awk '{ printf "["; print $0 "] "}'
 label=
 interval=60
 

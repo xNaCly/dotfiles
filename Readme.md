@@ -1,6 +1,8 @@
 # Dotfiles
-![image](https://user-images.githubusercontent.com/47723417/175972176-8200efcb-5284-4858-bd47-58dce1111613.png)
-![image](https://user-images.githubusercontent.com/47723417/175973303-da2a8a84-1bc2-441a-abc3-359a98119ff9.png)
+![image](https://user-images.githubusercontent.com/47723417/211254076-bfb01726-f2ed-491c-b455-21105fb0b9fd.png)
+![image](https://user-images.githubusercontent.com/47723417/211253629-75c56084-b0c9-4590-8931-0614da608d2f.png)
+![image](https://user-images.githubusercontent.com/47723417/211254019-701a5e50-e23c-4168-b7a8-8660cc50c125.png)
+
 
 
 ## Themeing:

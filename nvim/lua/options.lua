@@ -5,6 +5,9 @@ local o = vim.opt
 -- set the leader key to space
 g.mapleader = " "
 
+-- always enable sign column
+o.signcolumn = "yes"
+
 -- disable default file tree
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1

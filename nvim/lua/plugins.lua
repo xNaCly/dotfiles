@@ -40,6 +40,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install()'] })
     Plug('junegunn/fzf.vim')
 
+    -- markdown preview
+    vim.cmd[[Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }]]
+
     -- status line
     Plug 'nvim-lualine/lualine.nvim'
 

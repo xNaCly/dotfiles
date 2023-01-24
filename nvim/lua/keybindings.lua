@@ -39,11 +39,6 @@ map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 -- toggle the nvim tree sidebar
 map("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true})
 
--- on space f open fzf for files
-map("n", "<Leader>f", ":FZF<CR>", {silent = true})
--- on space p open ripgrep for strings in files
-map("n", "<Leader>p", ":Rg<CR>", {silent = true})
-
 -- move visual selection down
 map("v", "J", ":m '>+1<CR>gv=gv")
 -- move visual selection up
@@ -52,4 +47,11 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 -- use Tab to trigger completion for the currently selected completion
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 map("i", "<TAB>", 'coc#pum#visible() ? coc#pum#confirm() : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+
+local builtin = require('telescope.builtin')
+
+vim.keymap.set("n", "<leader>f", builtin.find_files, {silent = true})
+vim.keymap.set("n", "<leader>p", builtin.live_grep, {silent = true})
+vim.keymap.set("n", "<leader>h", builtin.help_tags, {silent = true})
+vim.keymap.set("n", "<leader>k", builtin.keymaps, {silent = true})
 

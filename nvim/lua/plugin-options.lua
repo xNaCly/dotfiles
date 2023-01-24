@@ -1,18 +1,17 @@
 -- set colorsheme
 vim.cmd([[colorscheme tokyonight-night]])
 
--- define fzf config, window size, preview using bat, etc
-vim.cmd([[let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}]])
-vim.cmd([[let $FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"]])
-
 vim.cmd([[command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument]])
 vim.cmd([[command! -nargs=0 Format :CocCommand editor.action.formatDocument]])
 
 -- run prettier before saving
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.*",
-  callback = function () vim.cmd([[:Prettier]]) end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*.*",
+--   callback = function () vim.cmd([[:Prettier]]) end,
+-- })
+
+
+require("telescope").setup()
 
 -- bufferline config
 require("bufferline").setup{

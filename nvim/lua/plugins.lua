@@ -37,8 +37,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'wakatime/vim-wakatime'
 
     -- fuzzy finder
-    Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install()'] })
-    Plug('junegunn/fzf.vim')
+    Plug 'nvim-lua/plenary.nvim'
+    Plug('nvim-telescope/telescope.nvim', { tag = '0.1.1' })
 
     -- markdown preview
     vim.cmd[[Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }]]

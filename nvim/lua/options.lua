@@ -1,6 +1,10 @@
 -- bind variables
 local g = vim.g
+
 local o = vim.opt
+
+-- disable autocomplete for copilot on tab
+g.copilot_no_tab_map = true
 
 -- set the leader key to space
 g.mapleader = " "

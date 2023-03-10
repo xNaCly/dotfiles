@@ -8,6 +8,8 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- move accepting copilot suggestion to strg+enter
+map("i", "<C-Enter>", "copilot#Accept('<CR>')", { silent = true, expr = true })
 
 -- taken from the coc.nvim example config:
 -- https://github.com/neoclide/coc.nvim
@@ -37,7 +39,7 @@ map("n", "gr", "<Plug>(coc-references)", {silent = true})
 map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 
 -- toggle the nvim tree sidebar
-map("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true})
+map("n", "<C-b>", ":NvimTreeFindFileToggle<CR>", {silent = true})
 
 -- move visual selection down
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -54,4 +56,5 @@ vim.keymap.set("n", "<leader>f", builtin.find_files, {silent = true})
 vim.keymap.set("n", "<leader>p", builtin.live_grep, {silent = true})
 vim.keymap.set("n", "<leader>h", builtin.help_tags, {silent = true})
 vim.keymap.set("n", "<leader>k", builtin.keymaps, {silent = true})
+vim.keymap.set("n", "<leader>o", builtin.treesitter, {silent = true})
 

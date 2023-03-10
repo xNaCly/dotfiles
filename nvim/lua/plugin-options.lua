@@ -4,14 +4,16 @@ vim.cmd([[colorscheme tokyonight-night]])
 vim.cmd([[command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument]])
 vim.cmd([[command! -nargs=0 Format :CocCommand editor.action.formatDocument]])
 
--- run prettier before saving
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = "*.*",
---   callback = function () vim.cmd([[:Prettier]]) end,
--- })
+require("nvim-tree").setup({
+  view = {
+      adaptive_size = true,
+  },
+})
 
 
 require("telescope").setup()
+
+require("todo-comments").setup()
 
 -- bufferline config
 require("bufferline").setup{
@@ -76,7 +78,8 @@ require("gitsigns").setup{
 -- toggleterm tree setup
 require("toggleterm").setup{
     open_mapping = [[<c-J>]],
-    direction = 'float',
+    direction = 'horizontal',
+    size = 25,
 }
 
 -- colors for my custom line
@@ -108,33 +111,39 @@ local bubbles_theme = {
   },
 }
 
--- lualine
-require('lualine').setup {
-  options = {
-    theme = bubbles_theme,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
-  },
-  sections = {
-    lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
-    },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
-    },
-  },
-  inactive_sections = {
-    lualine_a = { 'filename' },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = { 'location' },
-  },
-  tabline = {},
-  extensions = {},
+require("lualine").setup {
+    options = {
+        theme = "nightfly"
+    }
 }
+
+-- lualine
+-- require('lualine').setup {
+--   options = {
+--     theme = bubbles_theme,
+--     component_separators = '|',
+--     section_separators = { left = '', right = '' },
+--   },
+--   sections = {
+--     lualine_a = {
+--       { 'mode', separator = { left = '' }, right_padding = 2 },
+--     },
+--     lualine_b = { 'filename', 'branch' },
+--     lualine_c = { 'fileformat' },
+--     lualine_x = {},
+--     lualine_y = { 'filetype', 'progress' },
+--     lualine_z = {
+--       { 'location', separator = { right = '' }, left_padding = 2 },
+--     },
+--   },
+--   inactive_sections = {
+--     lualine_a = { 'filename' },
+--     lualine_b = {},
+--     lualine_c = {},
+--     lualine_x = {},
+--     lualine_y = {},
+--     lualine_z = { 'location' },
+--   },
+--   tabline = {},
+--   extensions = {},
+-- }

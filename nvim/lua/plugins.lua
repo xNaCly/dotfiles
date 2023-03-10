@@ -8,6 +8,8 @@ endif
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+    -- todo comments
+    Plug 'folke/todo-comments.nvim'
     -- git integration
     Plug 'lewis6991/gitsigns.nvim'
     -- copilot
@@ -17,9 +19,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
     -- toggle floating term
     Plug 'akinsho/toggleterm.nvim'
-
-    -- highlights indent
-    Plug 'yggdroot/indentLine'
 
     -- display buffers and tabs nicely
     Plug 'akinsho/bufferline.nvim'

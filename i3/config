@@ -22,16 +22,14 @@ set $browser "firefox"
 set $term "kitty"
 set $font Iosevka NerdFont
 set $font_size 10
-set $gaps 10
+set $gaps 0
 hide_edge_borders smart
-# smart_gaps on
 focus_follows_mouse no
 set $mod Mod4 
 set $alt Mod1
 bindsym Control+$alt+l exec "xscreensaver-command -l"
 bindsym ctrl+space exec "dunstctl close"
 bindsym $mod+c exec "kitty --directory=.config/i3/"
-bindsym $mod+s exec "surf https://duckduckgo.com"
 bindsym $mod+b exec $browser 
 bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+e exec "thunar"
@@ -73,10 +71,10 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+comma split v
-bindsym $mod+period split h
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle split
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -120,12 +118,15 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
 # class                 border          bg              text            indicator
-client.focused          $accent1        $accent1        $background     $accent1
-client.unfocused        $accent1_trans  $accent1_trans  $background    $accent1_trans
-default_border none
+client.focused          $accent1_trans  $accent1  $background     $accent1
+client.unfocused        $background     $background     $background     $background
+
+default_border pixel 1
 default_floating_border none
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
+
 bar {
         bindsym button1 nop
         status_command i3blocks
@@ -143,7 +144,6 @@ bar {
                 inactive_workspace      $background             $background             $text_color2
                 urgent_workspace        $color_danger           $color_danger           $text_color1
                 binding_mode            $color_danger           $color_danger           $background
-
         }
 }
 exec --no-startup-id dunst

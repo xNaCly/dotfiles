@@ -12,6 +12,7 @@
     "border": true,
     "rounded": true
   },
+  "ltex.language": "en-US",
   "suggest.enableFloat": true,
   "suggest.floatConfig": {
     "border": true,

@@ -13,7 +13,8 @@ set EDITOR "nvim"
 ### Path extras ###
 export PATH="/home/$USER/Applications:$PATH"
 export PATH="/home/$USER/.cargo/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/default"
+export GOPATH="/home/$USER/.config/go"
 
 ### aliases ###
 
@@ -30,11 +31,10 @@ end
 # rss feed reader
 alias nb="newsboat"
 
-# simple shutdown
-alias s="shutdown -h now"
-
 # extended shutdown
 alias ss="shutdown"
+
+alias pn="pnpm"
 
 # navigation
 alias ..="cd .."

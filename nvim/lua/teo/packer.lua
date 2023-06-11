@@ -1,6 +1,5 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-print("install_path: " .. install_path)
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
     download_result = fn.system({'ls', '-l', install_path})
@@ -9,8 +8,7 @@ end
 
 vim.cmd [[packadd packer.nvim]] 
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
 
     use {
       "folke/zen-mode.nvim",
@@ -84,7 +82,6 @@ return require('packer').startup(function(use)
             renderer = {
               full_name = true,
               group_empty = true,
-              git_placement = "after",
               special_files = {},
               symlink_destination = false,
               indent_markers = {

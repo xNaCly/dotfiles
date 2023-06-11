@@ -31,12 +31,12 @@ function _G.check_back_space()
 end
 
 
--- view the definition of the currently hovering over element
 map("n", "gd", "<Plug>(coc-definition)", {silent = true})
--- view a list of the references of the currently hovering over element
+map("n", "ga", "<Plug>(coc-codeaction-cursor)", {silent = true})
 map("n", "gr", "<Plug>(coc-references)", {silent = true})
--- view documentation for the currently hovering over element
 map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
+map("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
+map("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- toggle the nvim tree sidebar
 map("n", "<C-b>", ":NvimTreeFindFileToggle<CR>", {silent = true})
@@ -57,4 +57,5 @@ vim.keymap.set("n", "<leader>p", builtin.live_grep, {silent = true})
 vim.keymap.set("n", "<leader>h", builtin.help_tags, {silent = true})
 vim.keymap.set("n", "<leader>k", builtin.keymaps, {silent = true})
 vim.keymap.set("n", "<leader>o", builtin.treesitter, {silent = true})
+map("n", "<leader>t", ":TodoTelescope<CR>", {silent = true})
 

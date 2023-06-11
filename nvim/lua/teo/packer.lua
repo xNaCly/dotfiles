@@ -11,6 +11,18 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+
+    use {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("zen-mode").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+
     -- todo comments
     use {
         'folke/todo-comments.nvim',
@@ -27,10 +39,15 @@ return require('packer').startup(function(use)
     use 'akinsho/bufferline.nvim'
 
     -- color theme / sheme
-    use {
-        'folke/tokyonight.nvim',
-        branch = 'main',
-        config = function() vim.cmd([[colorscheme tokyonight-night]]) end
+    -- use {
+    --     'folke/tokyonight.nvim',
+    --     branch = 'main',
+    --     config = function() vim.cmd([[colorscheme tokyonight-night]]) end
+    -- }
+    use { 
+        "bluz71/vim-moonfly-colors",
+        as = "moonfly",
+        config = function() vim.cmd([[colorscheme moonfly]]) end
     }
 
     -- vscode extension provider
@@ -50,9 +67,9 @@ return require('packer').startup(function(use)
     }
 
     use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-})
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     -- status line
     use 'nvim-lualine/lualine.nvim'
@@ -63,6 +80,24 @@ return require('packer').startup(function(use)
         config = function() require("nvim-tree").setup({
             view = {
                 adaptive_size = true,
+            },
+            renderer = {
+              full_name = true,
+              group_empty = true,
+              git_placement = "after",
+              special_files = {},
+              symlink_destination = false,
+              indent_markers = {
+                enable = true,
+              },
+              icons = {
+                show = {
+                  file = true,
+                  folder = true,
+                  folder_arrow = true,
+                  git = true,
+                },
+              },
             },
         }) end
     }

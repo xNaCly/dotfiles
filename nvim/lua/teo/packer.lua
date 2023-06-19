@@ -21,6 +21,8 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
       end
     }
 
+    use 'lervag/vimtex'
+
     -- todo comments
     use {
         'folke/todo-comments.nvim',

@@ -23,6 +23,8 @@ set $term "kitty"
 set $font Iosevka NerdFont
 set $font_size 10
 set $gaps 0
+
+title_align center
 hide_edge_borders smart
 focus_follows_mouse no
 set $mod Mod4 
@@ -43,14 +45,12 @@ bindsym Print exec "flameshot full -c"
 for_window [class="Spotify"] move to workspace $ws4 
 for_window [class="firefox"] move to workspace $ws1
 assign [class="discord"] → $ws3
-assign [class=$term] → $ws2
 for_window [window_role="pop-up"]                       floating enable
 for_window [window_role="bubble"]                       floating enable 
 for_window [window_role="task_dialog"]                  floating enable
 for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable 
 for_window [window_type="menu"]                         floating enable
-title_align left
 bindsym $mod+n exec "nm-connection-editor"
 gaps inner $gaps
 font pango:$font $font_size
@@ -118,15 +118,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# class                 border          bg              text            indicator
-client.focused          $accent1_trans  $accent1  $background     $accent1
-client.unfocused        $background     $background     $background     $background
-
-default_border pixel 1
-default_floating_border none
-# for_window [class="^.*"] border pixel 0
-
 bar {
         bindsym button1 nop
         status_command i3blocks
@@ -135,21 +126,21 @@ bar {
         separator_symbol "‎" 
         strip_workspace_numbers yes
         colors {
-                background $background_trans
-                statusline $accent1
+                #background $background_trans
+                #statusline $accent1
                 
-                #class                  border                  bg                      text    
-                focused_workspace       $accent1                $accent1                $background
-                active_workspace        $accent1                $background_trans       $accent1
-                inactive_workspace      $background             $background             $text_color2
-                urgent_workspace        $color_danger           $color_danger           $text_color1
-                binding_mode            $color_danger           $color_danger           $background
+                ##class                  border                  bg                      text    
+                #focused_workspace       $accent1                $accent1                $background
+                #active_workspace        $accent1                $background_trans       $accent1
+                #inactive_workspace      $background             $background             $text_color2
+                #urgent_workspace        $color_danger           $color_danger           $text_color1
+                #binding_mode            $color_danger           $color_danger           $background
         }
 }
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xscreensaver
-exec_always --no-startup-id "picom -f"
+exec_always --no-startup-id 'xsetroot -solid "#333333"'
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
 exec --no-startup-id i3-msg "exec spotify"

@@ -1,5 +1,4 @@
 set selection-clipboard clipboard
 set window-title-basename "true"
 set selection-clipboard "clipboard"
-include catppuccin
 

@@ -23,10 +23,10 @@ command=sh ~/.config/i3blocks/scripts/volume_handler.sh
 label=
 interval=1
 
-#[battery]
-#command=acpi | awk ' { print $4 }' | sed 's/,*$//g'
-#label=Battery: 
-#interval=60
+[battery]
+command=acpi | awk ' { print "[" $4 "]" }' | sed 's/,//g'
+label=
+interval=60
 
 [date]
 command=date +%H:%M" "%d." "%b | awk '{ printf "["; print $0 "] "}'

@@ -14,6 +14,9 @@ g.mapleader = " "
 -- always enable sign column
 o.signcolumn = "yes"
 
+-- syntax
+o.spellsuggest="best,9"
+
 -- disable default file tree
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1

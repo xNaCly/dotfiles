@@ -15,6 +15,7 @@ export PATH="/home/$USER/Applications:$PATH"
 export PATH="/home/$USER/.cargo/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/default"
 export GOPATH="/home/$USER/.config/go"
+export PATH="$PATH:~/.config/go/bin"
 
 ### aliases ###
 

@@ -52,7 +52,7 @@ for_window [window_role="Preferences"]                  floating enable
 for_window [window_type="dialog"]                       floating enable 
 for_window [window_type="menu"]                         floating enable
 bindsym $mod+n exec "nm-connection-editor"
-# gaps inner $gaps
+gaps inner $gaps
 font pango:$font $font_size
 # bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
 bindsym $mod+d exec "rofi -show drun" 
@@ -120,7 +120,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bar {
         bindsym button1 nop
-        status_command i3status
+        status_command i3blocks
         i3bar_command i3bar --transparency
         position top
         separator_symbol "‎" 

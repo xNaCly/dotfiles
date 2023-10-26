@@ -18,7 +18,7 @@ set $text_color3 "#3b4261"
 set $color_danger "#f7768e"
 set $color_warning "#bb7a61"
 set $color_success "#9ece6a"
-set $browser "firefox"
+set $browser "falkon"
 set $term "kitty"
 set $font Iosevka NerdFont
 set $font_size 10
@@ -29,7 +29,6 @@ hide_edge_borders smart
 focus_follows_mouse no
 set $mod Mod4 
 set $alt Mod1
-bindsym Control+$alt+l exec "xscreensaver-command -l"
 bindsym ctrl+space exec "dunstctl close"
 bindsym $mod+c exec "kitty --directory=.config/i3/"
 bindsym $mod+b exec $browser 
@@ -108,6 +107,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+$alt+l exec "bash ~/.config/i3/scripts/lockscreen.sh"
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt

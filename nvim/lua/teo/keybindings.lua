@@ -37,6 +37,7 @@ map("n", "gr", "<Plug>(coc-references)", {silent = true})
 map("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 map("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 map("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+map("n", "<leader>r", "<Plug>(coc-rename)", {silent = true})
 
 -- toggle the nvim tree sidebar
 map("n", "<C-b>", ":NvimTreeFindFileToggle<CR>", {silent = true})

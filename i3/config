@@ -18,7 +18,7 @@ set $text_color3 "#3b4261"
 set $color_danger "#f7768e"
 set $color_warning "#bb7a61"
 set $color_success "#9ece6a"
-set $browser "falkon"
+set $browser "firefox"
 set $term "kitty"
 set $font Iosevka NerdFont
 set $font_size 10

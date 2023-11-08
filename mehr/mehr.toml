@@ -1,0 +1,28 @@
+# mehr config, see https://github.com/xNaCly/mehr
+package-manager = "auto"
+
+[git]
+# git config --global credential.helper store
+# git config --global user.name "xnacly"
+# git config --global user.email "47723417+xNaCly@users.noreply.github.com"
+
+[packages]
+    [packages.i3]
+    [packages.python]
+    [packages.dunst]
+    [packages.kitty]
+    [packages.ranger]
+    [packages.w3m]
+    [packages.picom]
+    [packages.fish]
+    [packages.imagemagick]
+    [packages.neovim]
+    [packages.firefox]
+    [packages.flameshot]
+    [packages.pipewire]
+    [packages.pamixer]
+    [packages.exa]
+    [packages.dmenu]
+
+[config]
+path = "/home/teo/.config"

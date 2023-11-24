@@ -1,29 +1,27 @@
-# mehr config, see https://github.com/xNaCly/mehr
-package-manager = "auto"
-
-[git]
-# git config --global credential.helper store
-# git config --global user.name "xnacly"
-# git config --global user.email "47723417+xNaCly@users.noreply.github.com"
-
-# default packages i require
 [package]
-    [package."$".i3]
-    [package."$".python]
-    [package."$".dunst]
-    [package."$".kitty]
-    [package."$".ranger]
-    [package."$".w3m]
-    [package."$".picom]
-    [package."$".fish]
-    [package."$".imagemagick]
-    [package."$".neovim]
-    [package."$".firefox]
-    [package."$".flameshot]
-    [package."$".pipewire]
-    [package."$".pamixer]
-    [package."$".exa]
-    [package."$".dmenu]
+    [package."$"]
+        [package."$".python]
+        [package."$".kitty]
+        [package."$".ranger]
+        [package."$".w3m]
+        [package."$".picom]
+        [package."$".fish]
+        [package."$".imagemagick]
+        [package."$".neovim]
+        [package."$".firefox]
+        [package."$".flameshot]
+        [package."$".pipewire]
+        [package."$".dunst]
+        [package."$".dmenu]
+        [package."$".i3]
 
-[config]
-path = "/home/teo/.config"
+    [package.pacman]
+        [package.pacman.pamixer]
+
+    [package.apt]
+        [package.apt.pamix]
+
+    [package.cargo]
+        [package.cargo.ripgrep]
+        [package.cargo.bat]
+        [package.cargo.exa]

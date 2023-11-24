@@ -13,7 +13,7 @@ export VISUAL="nvim"
 
 ### Path extras ###
 export GOPATH="/home/$USER/.config/go"
-export PATH="$PATH:~/.config/go/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin"
 
 ### aliases ###
 

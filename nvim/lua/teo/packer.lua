@@ -56,9 +56,6 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     -- comment helper
     use 'tpope/vim-commentary'
 
-    -- time tracking
-    use 'wakatime/vim-wakatime'
-
     -- fuzzy finder
     use {
         'nvim-telescope/telescope.nvim',

@@ -36,6 +36,8 @@ function temp_clone --description "Clone repo into temp dir"
     cd temprepo
 end
 
+alias z=zellij
+
 # extended shutdown
 alias ss="shutdown"
 

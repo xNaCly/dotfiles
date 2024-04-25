@@ -1,7 +1,7 @@
-# [wifi]
-# command=sh ~/.config/i3blocks/scripts/get_wifi.sh
-# label=
-# interval=30
+[wifi]
+command=sh ~/.config/i3blocks/scripts/get_wifi.sh
+label=
+interval=30
 
 [uptime]
 command=uptime | awk '{ printf "["; print $3 "min]" }' | sed 's/,//g'

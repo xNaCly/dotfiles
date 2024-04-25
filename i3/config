@@ -36,10 +36,10 @@ bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+e exec "thunar"
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
-bindsym XF86KbdBrightnessUp exec brightnessctl --device='smc::kbd_backlight' set +10
-bindsym XF86KbdBrightnessDown exec brightnessctl --device='smc::kbd_backlight' set 10-
-bindsym XF86MonBrightnessUp exec brightnessctl set +300
-bindsym XF86MonBrightnessDown exec brightnessctl set 300- 
+bindsym XF86KbdBrightnessUp exec brightnessctl --device='smc::kbd_backlight' set +10%
+bindsym XF86KbdBrightnessDown exec brightnessctl --device='smc::kbd_backlight' set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym Print exec "flameshot full -c"
 for_window [class="Spotify"] move to workspace $ws4 
 for_window [class="firefox"] move to workspace $ws1
@@ -107,7 +107,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+$alt+l exec "bash ~/.config/i3/scripts/lockscreen.sh"
+bindsym $mod+$alt+l exec "i3lock --date-color dddddd --time-color ffffff --clock --blur 5"
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt

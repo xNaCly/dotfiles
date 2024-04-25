@@ -14,12 +14,14 @@
         [package."$".dunst]
         [package."$".dmenu]
         [package."$".i3]
+        [package."$".acpi]
+        [package."$".rustup]
+        [package."$".zathura]
+        [package."$".hugo]
+        [package."$".git]
 
     [package.pacman]
         [package.pacman.pamixer]
-
-    [package.apt]
-        [package.apt.pamix]
 
     [package.cargo]
         [package.cargo.ripgrep]

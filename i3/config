@@ -6,18 +6,7 @@
 #╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 # https://github.com/xnacly/dotfiles
 set $background "#1a1b26"
-set $background_trans "#1a1b2660"
-set $background2 "#1f2335"
-set $accent1 "#7aa2f7"
-set $accent1_trans "#7aa2f760"
-set $accent2 "#2ac3de"
-set $accent3 "#bb9af7"
-set $text_color1 "#c0caf5"
-set $text_color2 "#a9b1d6"
-set $text_color3 "#3b4261"
-set $color_danger "#f7768e"
-set $color_warning "#bb7a61"
-set $color_success "#9ece6a"
+set $background_trans "#1a1b2699"
 set $browser "firefox"
 set $term "kitty"
 set $font Iosevka NerdFont
@@ -126,25 +115,19 @@ bar {
         separator_symbol "‎" 
         strip_workspace_numbers yes
         colors {
-                #background $background_trans
-                #statusline $accent1
-                
-                ##class                  border                  bg                      text    
-                #focused_workspace       $accent1                $accent1                $background
-                #active_workspace        $accent1                $background_trans       $accent1
-                #inactive_workspace      $background             $background             $text_color2
-                #urgent_workspace        $color_danger           $color_danger           $text_color1
-                #binding_mode            $color_danger           $color_danger           $background
+                background $background_trans
         }
 }
 exec --no-startup-id dunst
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id nitrogen --restore
 exec --no-startup-id xscreensaver
+exec --no-startup-id "picom -b"
 exec_always --no-startup-id 'xsetroot -solid "#333333"'
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
-exec --no-startup-id i3-msg "exec spotify"
-exec --no-startup-id i3-msg "exec discord"
-exec --no-startup-id i3-msg "exec flameshot"
-exec --no-startup-id i3-msg "exec thunar --deamon"
-exec_always --no-startup-id "gnome-keyring-daemon --start"
+exec --no-startup-id "exec spotify"
+exec --no-startup-id "exec discord"
+exec --no-startup-id "exec flameshot"
+exec --no-startup-id "exec thunar --deamon"
+exec --no-startup-id "exec thunar --deamon"
+exec --no-startup-id "/usr/lib/xfce-polkit/xfce-polkit"

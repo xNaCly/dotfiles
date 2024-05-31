@@ -3,6 +3,8 @@ local g = vim.g
 
 local o = vim.opt
 
+o.clipboard = "unnamedplus"
+
 g.moonflyVirtualTextColor = true
 
 -- disable autocomplete for copilot on tab

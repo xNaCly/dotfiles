@@ -9,7 +9,6 @@ end
 vim.cmd [[packadd packer.nvim]] 
 
 return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
-
     use {
       "folke/zen-mode.nvim",
       config = function()
@@ -120,5 +119,15 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     use {
         'nvim-treesitter/nvim-treesitter-context',
         requires = {'nvim-treesitter/nvim-treesitter'}
+    }
+
+    -- vuejs
+    use {
+        'yaegassy/coc-volar',
+        run ='yarn install --frozen-lockfile'
+    }
+    use {
+        'yaegassy/coc-volar-tools',
+        run ='yarn install --frozen-lockfile'
     }
 end)

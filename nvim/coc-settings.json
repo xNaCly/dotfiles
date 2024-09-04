@@ -12,10 +12,12 @@
     "border": true,
     "rounded": true
   },
-  "ltex.language": "en-US",
   "suggest.enableFloat": true,
   "suggest.floatConfig": {
     "border": true,
     "rounded": true
+  },
+  "emmet.includeLanguages": {
+    "vue-html": "html"
   }
 }

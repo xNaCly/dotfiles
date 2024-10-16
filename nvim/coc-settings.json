@@ -1,6 +1,7 @@
 {
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.formatOnSave": true,
+  "deno.enable": true,
   "diagnostic.virtualText": true,
   "diagnostic.hintSign": "H",
   "diagnostic.infoSign": "I",

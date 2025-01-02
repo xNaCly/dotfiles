@@ -8,7 +8,7 @@
 set $background "#1a1b26"
 set $background_trans "#1a1b2699"
 set $browser "firefox"
-set $term "kitty"
+set $term "ghostty"
 set $font Iosevka NerdFont
 set $font_size 10
 set $gaps 0

@@ -1,7 +1,8 @@
 theme = vim-moonfly
-font-family = Iosevka
+font-family = Iosevka Nerd Font
 font-size = 12
 window-theme = system
+gtk-adwaita = false
 gtk-titlebar = false
 confirm-close-surface = false
 cursor-style = bar

@@ -7,9 +7,9 @@
 # https://github.com/xnacly/dotfiles
 set $background "#1a1b26"
 set $background_trans "#1a1b2699"
-set $browser "firefox"
-set $term "ghostty"
-set $font Iosevka NerdFont
+set $browser firefox
+set $term ghostty
+set $font Iosevka Nerd Font
 set $font_size 10
 set $gaps 0
 
@@ -19,7 +19,7 @@ focus_follows_mouse no
 set $mod Mod4 
 set $alt Mod1
 bindsym $mod+space exec "dunstctl close"
-bindsym $mod+c exec "kitty --directory=.config/i3/"
+bindsym $mod+c exec $term --working-directory=".config/i3/"
 bindsym $mod+b exec $browser 
 bindsym $mod+shift+s exec "flameshot gui"
 bindsym $mod+e exec "thunar"

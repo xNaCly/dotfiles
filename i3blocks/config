@@ -1,5 +1,7 @@
-[wifi]
-command=sh ~/.config/i3blocks/scripts/get_wifi.sh
+# vim: filetype=config
+
+[network]
+command=nmcli connection show | sed -n '2p' | awk '{ printf "["; print $1 "]" }'
 label=
 interval=30
 

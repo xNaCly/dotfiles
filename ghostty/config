@@ -7,3 +7,4 @@ gtk-titlebar = false
 confirm-close-surface = false
 cursor-style = bar
 shell-integration = fish
+keybind = ctrl+enter=unbind

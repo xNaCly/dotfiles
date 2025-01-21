@@ -1,24 +1,16 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    download_result = fn.system({'ls', '-l', install_path})
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
+    download_result = fn.system({ 'ls', '-l', install_path })
     print("download_result: " .. download_result)
 end
 
-vim.cmd [[packadd packer.nvim]] 
+vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
-    use {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
+return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
 
     use 'lervag/vimtex'
 
@@ -43,7 +35,7 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     --     branch = 'main',
     --     config = function() vim.cmd([[colorscheme tokyonight-night]]) end
     -- }
-    use { 
+    use {
         "bluz71/vim-moonfly-colors",
         as = "moonfly",
         config = function() vim.cmd([[colorscheme moonfly]]) end
@@ -59,7 +51,7 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     use {
         'nvim-telescope/telescope.nvim',
         config = function() require("telescope").setup() end,
-        requires = {{'nvim-lua/plenary.nvim'}}
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use({
@@ -73,28 +65,30 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     -- file explorer
     use {
         'nvim-tree/nvim-tree.lua',
-        config = function() require("nvim-tree").setup({
-            view = {
-                adaptive_size = true,
-            },
-            renderer = {
-              full_name = true,
-              group_empty = true,
-              special_files = {},
-              symlink_destination = false,
-              indent_markers = {
-                enable = true,
-              },
-              icons = {
-                show = {
-                  file = true,
-                  folder = true,
-                  folder_arrow = true,
-                  git = true,
+        config = function()
+            require("nvim-tree").setup({
+                view = {
+                    adaptive_size = true,
                 },
-              },
-            },
-        }) end
+                renderer = {
+                    full_name = true,
+                    group_empty = true,
+                    special_files = {},
+                    symlink_destination = false,
+                    indent_markers = {
+                        enable = true,
+                    },
+                    icons = {
+                        show = {
+                            file = true,
+                            folder = true,
+                            folder_arrow = true,
+                            git = true,
+                        },
+                    },
+                },
+            })
+        end
     }
 
     -- icons for everything, file explorer, tabs, statusline
@@ -118,16 +112,16 @@ return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
     -- sticky scroll
     use {
         'nvim-treesitter/nvim-treesitter-context',
-        requires = {'nvim-treesitter/nvim-treesitter'}
+        requires = { 'nvim-treesitter/nvim-treesitter' }
     }
 
     -- vuejs
     use {
         'yaegassy/coc-volar',
-        run ='yarn install --frozen-lockfile'
+        run = 'yarn install --frozen-lockfile'
     }
     use {
         'yaegassy/coc-volar-tools',
-        run ='yarn install --frozen-lockfile'
+        run = 'yarn install --frozen-lockfile'
     }
 end)

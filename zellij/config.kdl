@@ -1,5 +1,5 @@
 default_layout "xnacly"
-theme "tokyo-night-dark"
+theme "moonfly"
 
 keybinds clear-defaults=true {
     normal {
@@ -34,5 +34,6 @@ keybinds clear-defaults=true {
         bind "J" { MovePane "Down"; }
         bind "K" { MovePane "Up"; }
         bind "L" { MovePane "Right"; }
+        bind "e" { EditScrollback; }
     }
 }

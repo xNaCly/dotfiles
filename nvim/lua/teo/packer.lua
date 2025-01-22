@@ -14,6 +14,35 @@ return require('packer').startup(function(use)
 
     use 'lervag/vimtex'
 
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function ()
+            local cmp = require('cmp')
+            cmp.setup({
+                mapping = {
+                    ["<C-n>"] = cmp.mapping.select_next_item { behaviour = cmp.SelectBehavior.Insert },
+                    ["<C-p>"] = cmp.mapping.select_prev_item { behaviour = cmp.SelectBehavior.Insert },
+                    ["<Tab>"] = cmp.mapping(
+                        cmp.mapping.confirm {
+                             behaviour = cmp.SelectBehavior.Insert,
+                             select = true,
+                        },
+                        { "i", "c" }
+                    ),
+                },
+                sources = cmp.config.sources({
+                    { name = 'nvim_lsp' },
+                    { name = 'path' },
+                    { name = 'buffer' },
+                }),
+            })
+        end
+    }
+
     -- todo comments
     use {
         'folke/todo-comments.nvim',
@@ -40,9 +69,6 @@ return require('packer').startup(function(use)
         as = "moonfly",
         config = function() vim.cmd([[colorscheme moonfly]]) end
     }
-
-    -- vscode extension provider
-    use 'neoclide/coc.nvim'
 
     -- comment helper
     use 'tpope/vim-commentary'

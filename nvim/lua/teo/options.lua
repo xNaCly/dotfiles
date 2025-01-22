@@ -3,6 +3,8 @@ local g = vim.g
 
 local o = vim.opt
 
+o.completeopt = { "menu", "menuone", "noselect" }
+
 o.clipboard = "unnamedplus"
 
 g.moonflyVirtualTextColor = true
@@ -87,7 +89,7 @@ o.backup = false
 o.background = "dark"
 
 -- display the current line different from the rest of the file
-o.cursorline = true
+-- o.cursorline = true
 
 o.swapfile = false
 

@@ -21,12 +21,14 @@ MEHR2 = {
             {
                 identifier = "rustup",
                 needs = { "curl" },
-                commands = {
-                    "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
-                    "rustup component add rust-docs",
-                    "rustup component add cargo",
-                    "rustup component add clippy",
-                    "rustup component add rustfmt",
+                update = "rustup update", 
+                script = [[
+                    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                    rustup component add rust-docs
+                    rustup component add cargo
+                    rustup component add clippy
+                    rustup component add rustfmt
+                ]]
                 }
             },
             {
@@ -35,19 +37,19 @@ MEHR2 = {
                 git = "github.com/neovim/neovim",
                 needs = { "make", "cmake", "gcc" },
                 branch = "nightly",
-                commands = {
-                    "make CMAKE_BUILD_TYPE=Release",
-                    "make install"
+                script = [[
+                    make CMAKE_BUILD_TYPE=Release
+                    make install
+                ]]
                 }
             },
             {
                 -- see: https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager
                 identifier = "zig",
                 execute_for = { "apt" },
+                update = "snap refresh zig",
                 needs = { "snap" },
-                commands = {
-                    "snap install zig --classic --beta"
-                }
+                script = "snap install zig --classic --beta"
             },
             {
                 -- see: https://ghostty.org/docs/install/build
@@ -55,23 +57,24 @@ MEHR2 = {
                 execute_for = { "apt" },
                 git = "github.com/ghostty-org/ghostty",
                 needs = { "zig", "gtk4" },
-                commands = {
-                    "zig build -p /usr -Doptimize=ReleaseFast",
-                }
+                script = "zig build -p /usr -Doptimize=ReleaseFast"
             },
-            -- todo
-            -- {
-            --     identifier = "go",
-            --     execute_for = { "apt" }
-            -- },
+            {
+                identifier = "go",
+                execute_for = { "apt" },
+                -- TODO: this needs the wget before untaring
+                script = [[
+                    VERSION=$(curl -s "https://go.dev/VERSION?m=text" | head -n1)
+                    rm -rf /usr/local/go
+                    tar -C /usr/local -xzf $VERSION.linux-amd64.tar.gz
+                ]]
+            },
             {
                 -- see: https://gohugo.io/installation/linux/#build-from-source
                 identifier = "hugo",
                 execute_for = { "apt" },
                 needs = { "go" },
-                commands = {
-                    "go install github.com/gohugoio/hugo@latest",
-                }
+                script = "go install github.com/gohugoio/hugo@latest"
             },
         },
         cargo = { "exa", "bat", "ripgrep", "yazi" }

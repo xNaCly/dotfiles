@@ -62,9 +62,9 @@ MEHR2 = {
             {
                 identifier = "go",
                 execute_for = { "apt" },
-                -- TODO: this needs the wget before untaring
                 script = [[
                     VERSION=$(curl -s "https://go.dev/VERSION?m=text" | head -n1)
+                    wget https://go.dev/dl/$VERSION.linux-amd64.tar.gz
                     rm -rf /usr/local/go
                     tar -C /usr/local -xzf $VERSION.linux-amd64.tar.gz
                 ]]

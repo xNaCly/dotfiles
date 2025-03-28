@@ -21,7 +21,7 @@ MEHR2 = {
             {
                 identifier = "rustup",
                 needs = { "curl" },
-                update = "rustup update", 
+                update = "rustup update",
                 script = [[
                     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
                     rustup component add rust-docs
@@ -29,7 +29,6 @@ MEHR2 = {
                     rustup component add clippy
                     rustup component add rustfmt
                 ]]
-                }
             },
             {
                 -- see: https://github.com/neovim/neovim/blob/master/BUILD.md
@@ -41,7 +40,6 @@ MEHR2 = {
                     make CMAKE_BUILD_TYPE=Release
                     make install
                 ]]
-                }
             },
             {
                 -- see: https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager
@@ -78,5 +76,5 @@ MEHR2 = {
             },
         },
         cargo = { "exa", "bat", "ripgrep", "yazi" }
-    }
+    },
 }

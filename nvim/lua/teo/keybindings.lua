@@ -12,10 +12,10 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { silent = true })
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { silent = true })
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { silent = true })
-vim.keymap.set("n", "]g", vim.diagnostic.goto_prev, { silent = true })
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { silent = true })
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { silent = true })
-vim.keymap.set("n", "<leader>e", function () vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
-vim.keymap.set("n", "K", function () vim.lsp.buf.hover(floating_options) end, { silent = true })
+vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(nil, floating_options) end, { silent = true })
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover(floating_options) end, { silent = true })
 
 
 -- toggle the nvim tree sidebar

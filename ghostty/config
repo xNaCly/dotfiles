@@ -1,10 +1,10 @@
 theme = vim-moonfly
 font-family = Iosevka Nerd Font
 font-size = 12
-window-theme = system
-gtk-adwaita = false
-gtk-titlebar = false
 confirm-close-surface = false
 cursor-style = bar
 shell-integration = fish
 keybind = ctrl+enter=unbind
+window-decoration = server
+window-theme = ghostty
+background-opacity = 0.9 

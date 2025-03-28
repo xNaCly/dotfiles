@@ -3,8 +3,6 @@ local g = vim.g
 
 local o = vim.opt
 
-o.completeopt = { "menu", "menuone", "noselect" }
-
 o.clipboard = "unnamedplus"
 
 g.moonflyVirtualTextColor = true
@@ -19,7 +17,7 @@ g.mapleader = " "
 o.signcolumn = "yes"
 
 -- syntax
-o.spellsuggest="best,9"
+o.spellsuggest = "best,9"
 
 -- disable default file tree
 g.loaded_netrw = 1

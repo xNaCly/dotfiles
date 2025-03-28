@@ -20,8 +20,14 @@ vim.lsp.config.sqleibniz = {
 }
 vim.lsp.enable('sqleibniz')
 
-vim.api.nvim_create_autocmd({"BufWritePre", nil}, {
-    callback = function () 
+vim.lsp.config['rust-lsp-example'] = {
+    cmd = { '/usr/local/bin/rust-lsp-example', '--lsp' },
+    filetypes = { "lisp" },
+}
+vim.lsp.enable('rust-lsp-example')
+
+vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
+    callback = function()
         if vim.lsp.buf_is_attached() then
             vim.lsp.buf.format()
         end
@@ -29,7 +35,21 @@ vim.api.nvim_create_autocmd({"BufWritePre", nil}, {
 })
 
 local lspconfig = require "lspconfig"
-local lsps = { "rust_analyzer", "gopls", "ts_ls", "html", "cssls" }
+local lsps = {
+    "rust_analyzer",
+    "gopls",
+    "ts_ls",
+    "html",
+    "cssls",
+    "lua_ls",
+    "hls"
+}
 for _, lsp in pairs(lsps) do
-    lspconfig[lsp].setup{}
+    lspconfig[lsp].setup {}
 end
+
+lspconfig.clangd.setup {
+    init_options = {
+        fallbackFlags = { '--std=c23' }
+    },
+}

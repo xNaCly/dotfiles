@@ -26,8 +26,8 @@ vim.lsp.config['rust-lsp-example'] = {
 }
 vim.lsp.enable('rust-lsp-example')
 
-vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
-    callback = function()
+vim.api.nvim_create_autocmd({"BufWritePre", nil}, {
+    callback = function () 
         if vim.lsp.buf_is_attached() then
             vim.lsp.buf.format()
         end

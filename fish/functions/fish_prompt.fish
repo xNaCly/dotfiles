@@ -86,5 +86,10 @@ function fish_prompt
         end
     end
 
-    echo -n -s ''$cwd $repo_info $normal ' ' $arrow 
+    set -l in_nix
+    if set -q IN_NIX_SHELL
+        set in_nix "(nix) "
+    end
+
+    echo -n -s ''$in_nix $cwd $repo_info $normal ' ' $arrow 
 end

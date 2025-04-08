@@ -17,6 +17,10 @@ export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin"
 
 ### aliases ###
 
+function dev --description "Wrapper for nix develop with some options"
+    nix develop -c $SHELL $argv
+end
+
 function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
     if test "$argv" = !!
     eval command sudo $history[1]

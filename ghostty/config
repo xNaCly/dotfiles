@@ -1,4 +1,4 @@
-theme = vim-moonfly
+theme = latte
 font-family = Iosevka Nerd Font
 font-size = 12
 confirm-close-surface = false
@@ -7,4 +7,4 @@ shell-integration = fish
 keybind = ctrl+enter=unbind
 window-decoration = server
 window-theme = ghostty
-background-opacity = 0.9 
+background-opacity = 0.5

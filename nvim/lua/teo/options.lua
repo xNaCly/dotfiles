@@ -7,9 +7,6 @@ o.clipboard = "unnamedplus"
 
 g.moonflyVirtualTextColor = true
 
--- disable autocomplete for copilot on tab
-g.copilot_no_tab_map = true
-
 -- set the leader key to space
 g.mapleader = " "
 
@@ -63,9 +60,6 @@ o.expandtab = true
 -- indent blocks automatically
 o.smartindent = true
 o.autoindent = true
-
--- enable tabline if a tab is there
-o.showtabline = 1
 
 -- dont show mode in the bottom bar
 o.showmode = false

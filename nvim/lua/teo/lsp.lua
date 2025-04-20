@@ -26,8 +26,8 @@ vim.lsp.config['rust-lsp-example'] = {
 }
 vim.lsp.enable('rust-lsp-example')
 
-vim.api.nvim_create_autocmd({"BufWritePre", nil}, {
-    callback = function () 
+vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
+    callback = function()
         if vim.lsp.buf_is_attached() then
             vim.lsp.buf.format()
         end
@@ -39,10 +39,9 @@ local lsps = {
     "rust_analyzer",
     "gopls",
     "ts_ls",
-    "html",
     "cssls",
     "lua_ls",
-    "hls"
+    "hls",
 }
 for _, lsp in pairs(lsps) do
     lspconfig[lsp].setup {}

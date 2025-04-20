@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use {
         'hrsh7th/nvim-cmp',
-        config = function ()
+        config = function()
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
@@ -28,8 +28,8 @@ return require('packer').startup(function(use)
                     ["<C-p>"] = cmp.mapping.select_prev_item { behaviour = cmp.SelectBehavior.Insert },
                     ["<Tab>"] = cmp.mapping(
                         cmp.mapping.confirm {
-                             behaviour = cmp.SelectBehavior.Insert,
-                             select = true,
+                            behaviour = cmp.SelectBehavior.Insert,
+                            select = true,
                         },
                         { "i", "c" }
                     ),
@@ -55,19 +55,26 @@ return require('packer').startup(function(use)
     -- toggle floating term
     use 'akinsho/toggleterm.nvim'
 
-    -- display buffers and tabs nicely
-    use 'akinsho/bufferline.nvim'
-
     -- color theme / sheme
     -- use {
     --     'folke/tokyonight.nvim',
     --     branch = 'main',
     --     config = function() vim.cmd([[colorscheme tokyonight-night]]) end
     -- }
+    -- use {
+    --     "bluz71/vim-moonfly-colors",
+    --     as = "moonfly",
+    --     config = function() vim.cmd([[colorscheme moonfly]]) end
+    -- }
     use {
-        "bluz71/vim-moonfly-colors",
-        as = "moonfly",
-        config = function() vim.cmd([[colorscheme moonfly]]) end
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            require("catppuccin").setup {
+                transparent_background = true,
+            }
+            vim.cmd([[colorscheme catppuccin-latte]])
+        end
     }
 
     -- comment helper

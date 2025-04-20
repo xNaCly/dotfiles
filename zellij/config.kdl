@@ -1,5 +1,5 @@
 default_layout "xnacly"
-theme "moonfly"
+theme "catppuccin-latte"
 
 keybinds clear-defaults=true {
     normal {

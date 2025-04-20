@@ -117,31 +117,21 @@
     mouse_middle_click = close_all
     mouse_right_click = close_current
 
-[urgency_critical]
-#    frame_color = "#f28fad"
-    timeout = 0
-    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
-
-
-[urgency_normal]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
-    frame_color = "#1a1b26"
-    timeout = 10
+[global]
+frame_color = "#eff1f5"
+separator_color= frame
+highlight = "#1e66f5"
 
 [urgency_low]
-    # This urgency should be used only 
-    # for volume/brightness notification
-    frame_color = "#1a1b26"
-    foreground = "#3b4261"
-    background = "#1e1d2f"
-    timeout = 1
+background = "#eff1f5"
+foreground = "#4c4f69"
 
-[spotify]
-    appname="Spotify"
-    background = "#1a1b26"
-    foreground = "#7aa2f7"
-    frame_color = "#1a1b26"
-    timeout = 10
+[urgency_normal]
+background = "#eff1f5"
+foreground = "#4c4f69"
+
+[urgency_critical]
+background = "#eff1f5"
+foreground = "#4c4f69"
 
 vim: ft=cfg

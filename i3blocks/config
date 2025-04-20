@@ -1,17 +1,17 @@
 # vim: filetype=config
 
 [network]
-command=nmcli connection show | sed -n '2p' | awk '{ printf "["; print $1 "]" }'
+command=nmcli connection show | sed -n '2p' | awk '{ print $1 }'
 label=
 interval=30
 
 [uptime]
-command=uptime | awk '{ printf "["; print $3 "min]" }' | sed 's/,//g'
+command=uptime -p
 label=
 interval=60
 
 [memory]
-command=free -m | tail -n2 | head -n1 | awk '{ printf "["; print $3 "mb]"}'
+command=free -m | tail -n2 | head -n1 | awk '{ print $3 "mb"}'
 label=
 interval=10
 
@@ -26,12 +26,12 @@ label=
 interval=1
 
 [battery]
-command=acpi | awk ' { print "[" $4 "]" }' | sed 's/,//g'
+command=acpi | awk ' { print $4}' | sed 's/,//g'
 label=
 interval=60
 
 [date]
-command=date +%H:%M" "%d." "%b | awk '{ printf "["; print $0 "] "}'
+command=date +%H:%M" "%d." "%b | awk '{ print $0 }'
 label=
 interval=60
 

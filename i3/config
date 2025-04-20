@@ -5,14 +5,39 @@
 #██╔╝ ██╗██║ ╚████║██║  ██║╚██████╗███████╗██║       ██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 # https://github.com/xnacly/dotfiles
-set $background "#1a1b26"
-set $background_trans "#1a1b2690"
+set $rosewater #dc8a78
+set $flamingo #dd7878
+set $pink #ea76cb
+set $mauve #8839ef
+set $red #d20f39
+set $maroon #e64553
+set $peach #fe640b
+set $yellow #df8e1d
+set $green #40a02b
+set $teal #179299
+set $sky #04a5e5
+set $sapphire #209fb5
+set $blue #1e66f5
+set $lavender #7287fd
+set $text #4c4f69
+set $subtext1 #5c5f77
+set $subtext0 #6c6f85
+set $overlay2 #7c7f93
+set $overlay1 #8c8fa1
+set $overlay0 #9ca0b0
+set $surface2 #acb0be
+set $surface1 #bcc0cc
+set $surface0 #ccd0da
+set $base #eff1f5
+set $mantle #e6e9ef
+set $crust #dce0e8
 set $browser firefox
 set $term ghostty
 set $font Iosevka Nerd Font
 set $font_size 10
-set $gaps 0
+set $gaps 10
 
+default_border pixel 3
 title_align center
 hide_edge_borders smart
 focus_follows_mouse no
@@ -106,28 +131,43 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
+
+# target                 title     bg    text   indicator  border
+client.focused           $mauve    $base $text  $mauve     $mauve
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $mantle
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
 bindsym $mod+r mode "resize"
 bar {
-        bindsym button1 nop
-        status_command i3blocks
-        i3bar_command i3bar --transparency
-        position top
-        separator_symbol "‎" 
-        strip_workspace_numbers yes
-        colors {
-                background $background_trans
-        }
+    bindsym button1 nop
+    status_command i3blocks
+    i3bar_command i3bar -t
+    position top
+    strip_workspace_numbers yes
+    colors {
+        background         $base
+        statusline         $text
+        focused_statusline $text
+        focused_separator  $base
+
+        # target           border bg        text
+        focused_workspace  $base  $mauve    $crust
+        active_workspace   $base  $surface2 $text
+        inactive_workspace $base  $base     $text
+        urgent_workspace   $base  $red      $crust
+    }
 }
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xscreensaver
-exec --no-startup-id "picom -b"
-exec_always --no-startup-id 'xsetroot -solid "#333333"'
+exec_always --no-startup-id "picom -b"
 exec_always --no-startup-id "playerctld daemon"
 exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
-exec --no-startup-id "exec spotify"
-exec --no-startup-id "exec discord"
-exec --no-startup-id "exec flameshot"
-exec --no-startup-id "exec thunar --deamon"
-exec --no-startup-id "exec thunar --deamon"
+exec --no-startup-id "spotify"
+exec --no-startup-id "discord"
+exec --no-startup-id "flameshot"
+exec --no-startup-id "thunar --deamon"
 exec --no-startup-id "/usr/lib/xfce-polkit/xfce-polkit"

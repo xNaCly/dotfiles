@@ -13,19 +13,6 @@ _G.floating_options = {
     max_width = 100,
 }
 
-vim.lsp.config.sqleibniz = {
-    cmd = { '/usr/bin/sqleibniz', '--lsp' },
-    filetypes = { "sql" },
-    root_markers = { "leibniz.lua" }
-}
-vim.lsp.enable('sqleibniz')
-
-vim.lsp.config['rust-lsp-example'] = {
-    cmd = { '/usr/local/bin/rust-lsp-example', '--lsp' },
-    filetypes = { "lisp" },
-}
-vim.lsp.enable('rust-lsp-example')
-
 vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
     callback = function()
         if vim.lsp.buf_is_attached() then
@@ -34,21 +21,58 @@ vim.api.nvim_create_autocmd({ "BufWritePre", nil }, {
     end,
 })
 
-local lspconfig = require "lspconfig"
-local lsps = {
-    "rust_analyzer",
-    "gopls",
-    "ts_ls",
-    "cssls",
-    "lua_ls",
-    "hls",
-}
-for _, lsp in pairs(lsps) do
-    lspconfig[lsp].setup {}
-end
+vim.lsp.buf.code_action = (function(orig)
+    return function(opts)
+        opts = opts or {}
+        opts.filter = function(action)
+            if not action then return false end
+            -- Ignore gopls "Browse" actions
+            if action.title and action.title:match("Browse gopls") then
+                return false
+            end
+            return true
+        end
+        return orig(opts)
+    end
+end)(vim.lsp.buf.code_action)
 
-lspconfig.clangd.setup {
-    init_options = {
-        fallbackFlags = { '--std=c23' }
+local lsps = {
+    { "rust_analyzer" },
+    { "gopls" },
+    { "ts_ls" },
+    { "cssls" },
+    { "lua_ls" },
+    { "hls" },
+    {
+        "clangd",
+        {
+            init_options = {
+                fallbackFlags = { '--std=c23' }
+            },
+        }
+    },
+    {
+        "sqleibniz",
+        {
+            cmd = { '/usr/bin/sqleibniz', '--lsp' },
+            filetypes = { "sql" },
+            root_markers = { "leibniz.lua" }
+        }
+    },
+    {
+        "rust-lsp-example",
+        {
+            cmd = { '/usr/local/bin/rust-lsp-example', '--lsp' },
+            filetypes = { "lisp" },
+        }
     },
 }
+
+-- see: https://neovim.io/doc/user/news-0.11.html#_lsp
+for _, lsp in pairs(lsps) do
+    local name, config = lsp[1], lsp[2]
+    vim.lsp.enable(name)
+    if config then
+        vim.lsp.config(name, config)
+    end
+end

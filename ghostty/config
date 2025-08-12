@@ -1,5 +1,5 @@
 theme = latte
-font-family = Iosevka Nerd Font
+font-family = GoMono Nerd Font
 font-size = 12
 confirm-close-surface = false
 cursor-style = bar
@@ -7,4 +7,4 @@ shell-integration = fish
 keybind = ctrl+enter=unbind
 window-decoration = server
 window-theme = ghostty
-background-opacity = 0.5
+# background-opacity = 0.5
